@@ -132,15 +132,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" Powerline
-set guifont=Monaco\ for\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
-set termencoding=utf-8
-
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
