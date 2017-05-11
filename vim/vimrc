@@ -224,4 +224,5 @@ colorscheme xoria256
 
 " 80-column rule
 set colorcolumn=81
-highlight ColorColumn ctermbg=056 guibg=056
+highlight ColorColumn ctermbg=056 guibg=#5f00d7
+
