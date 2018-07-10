@@ -44,6 +44,9 @@ set smarttab      " Smarter tab levels
 
 set relativenumber " Show line numbers relative to current line
 set number         " Show current line number
+set colorcolumn=81
+set synmaxcol=200
+
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
 "--------------------
@@ -70,10 +73,10 @@ let mapleader=","
 " syntax on
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " filetype on
-" let g:go_fmt_command = "gofmt"
+let g:go_fmt_command = "gofmt"
 
 " fix for syntastic slowdown
-" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_fmt_command = "goimports"
 
 " PHP stuff
@@ -97,15 +100,16 @@ filetype plugin indent on
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " NERDTREE
-let NERDTreeIgnore = ['node_modules', 'tmp']
+let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
 
 " Command T
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]bower_components',
+  \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
 set wildignore+=node_modules
+set wildignore+=.git
 set wildignore+=dist
 set wildignore+=client/dist
 set wildignore+=*/bower_components
@@ -126,10 +130,10 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_user_command = 'ag %s -S -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+  " let g:ctrlp_use_caching = 0
 endif
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -171,8 +175,8 @@ let g:lightline = {
       \   'fileencoding': 'LightLineFileencoding',
       \   'mode': 'LightLineMode',
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '|', 'right': '|' },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
 function! LightLineModified()
@@ -180,7 +184,7 @@ function! LightLineModified()
 endfunction
 
 function! LightLineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '|' : ''
 endfunction
 
 function! LightLineFilename()
@@ -195,7 +199,7 @@ endfunction
 function! LightLineFugitive()
   if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
     let _ = fugitive#head()
-    return _ !=# '' ? '⭠ '._ : ''
+    return _ !=# '' ? '|'._ : ''
   endif
   return ''
 endfunction
@@ -223,6 +227,11 @@ colorscheme xoria256
 :nnoremap <S-Tab> :bprevious<CR>
 
 " 80-column rule
-set colorcolumn=81
 highlight ColorColumn ctermbg=056 guibg=#5f00d7
 
+if has('macunix')
+  let g:AutoPairsShortcutToggle     = 'π' " <m-p>
+  let g:AutoPairsShortcutFastWrap   = '∑' " <m-w>
+  let g:AutoPairsShortcutJump       = '∆' " <m-j>
+  let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
+endif
