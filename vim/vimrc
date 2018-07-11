@@ -102,6 +102,9 @@ autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 " NERDTREE
 let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
 
+" detectindent
+autocmd BufReadPost * :DetectIndent
+
 " Command T
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
