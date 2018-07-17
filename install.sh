@@ -12,5 +12,7 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+ln -s $dir/config/nvim ~/.config/nvim
+
 echo "Pulling git submodules"
 git submodule update --init --recursive

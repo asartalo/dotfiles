@@ -1,9 +1,6 @@
 " Disable vi compatibility
 set nocompatible
 
-" Set 256 Colors
-let &t_Co = 256
-
 " Large history buffer
 set history=256
 
@@ -90,13 +87,6 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 " endfunction
 let g:syntastic_typescript_tsc_fname = ''
 
-" pathogen
-execute pathogen#infect()
-syntax on
-filetype on
-filetype plugin on
-filetype plugin indent on
-
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " NERDTREE
@@ -106,26 +96,26 @@ let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
 autocmd BufReadPost * :DetectIndent
 
 " Command T
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
-
-set wildignore+=node_modules
-set wildignore+=.git
-set wildignore+=dist
-set wildignore+=client/dist
-set wildignore+=*/bower_components
-set wildignore+=client/bower_components
-set wildignore+=*/jspm_packages
-set wildignore+=tmp,/.tmp
-set wildignore+=*/.png
+"!!!et g:ctrlp_custom_ignore = {
+"!!! \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
+"!!! \ 'file': '\.exe$\|\.so$\|\.dat$'
+"!!! \ }
+"!!!
+"!!!et wildignore+=node_modules
+"!!!et wildignore+=.git
+"!!!et wildignore+=dist
+"!!!et wildignore+=client/dist
+"!!!et wildignore+=*/bower_components
+"!!!et wildignore+=client/bower_components
+"!!!et wildignore+=*/jspm_packages
+"!!!et wildignore+=tmp,/.tmp
+"!!!et wildignore+=*/.png
 
 " CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"!!!set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Ag
-set runtimepath^=~/.vim/bundle/ag
+"!!!set runtimepath^=~/.vim/bundle/ag
 
 " The Silver Searcher
 if executable('ag')
@@ -142,16 +132,13 @@ endif
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 " Statusline
-if has('statusline')
-  set laststatus=2
+"!!!if has('statusline')
+  "!!!set laststatus=2
   " Broken down into easily includeable segments
   " set statusline=%<%f\    " Filename
   " set statusline+=%w%h%m%r " Options
-  set statusline+=%{fugitive#statusline()} "  Git Hotness
+  "!!!set statusline+=%{fugitive#statusline()} "  Git Hotness
   " set statusline+=\ [%{&ff}/%Y]            " filetype
   " set statusline+=\ [%{getcwd()}]          " current dir
   " set statusline+=%#warningmsg#
@@ -159,71 +146,8 @@ if has('statusline')
   " set statusline+=%*
   " let g:syntastic_enable_signs=1
   " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
+"!!!endif
 
-" Litline
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'LightLineModified',
-      \   'readonly': 'LightLineReadonly',
-      \   'fugitive': 'LightLineFugitive',
-      \   'filename': 'LightLineFilename',
-      \   'fileformat': 'LightLineFileformat',
-      \   'filetype': 'LightLineFiletype',
-      \   'fileencoding': 'LightLineFileencoding',
-      \   'mode': 'LightLineMode',
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
-
-function! LightLineModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightLineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '|' : ''
-endfunction
-
-function! LightLineFilename()
-  return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:p:h:t') . '/' . expand('%:t') : '[No Name]') .
-        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! LightLineFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return _ !=# '' ? '|'._ : ''
-  endif
-  return ''
-endfunction
-
-function! LightLineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightLineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightLineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-endfunction
-
-function! LightLineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-
-colorscheme xoria256
 
 " Buffer switching
 :nnoremap <Tab> :bnext<CR>
@@ -239,8 +163,10 @@ highlight ColorColumn ctermbg=056 guibg=#5f00d7
 " inoremap <expr> <c-k> ("\<C-p>")
 
 if has('macunix')
-  let g:AutoPairsShortcutToggle     = 'π' " <m-p>
-  let g:AutoPairsShortcutFastWrap   = '∑' " <m-w>
-  let g:AutoPairsShortcutJump       = '∆' " <m-j>
-  let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
+  "!!!let g:AutoPairsShortcutToggle     = 'π' " <m-p>
+  "!!!let g:AutoPairsShortcutFastWrap   = '∑' " <m-w>
+  "!!!let g:AutoPairsShortcutJump       = '∆' " <m-j>
+  "!!!let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
 endif
+
+
