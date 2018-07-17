@@ -101,20 +101,6 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
-set wildignore+=node_modules
-set wildignore+=.git
-set wildignore+=dist
-set wildignore+=client/dist
-set wildignore+=*/bower_components
-set wildignore+=client/bower_components
-set wildignore+=*/jspm_packages
-set wildignore+=tmp,/.tmp
-set wildignore+=*/.png
-
-
-" CtrlP
-set runtimepath^=~/.config/nvim/plugged/ctrlp.vim
-
 " Ag
 set runtimepath^=~/.config/nvim/plugged/ag.vim
 
