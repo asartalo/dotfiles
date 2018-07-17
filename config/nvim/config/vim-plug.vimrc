@@ -23,6 +23,8 @@ Plug 'ciaranm/detectindent'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " Colors
 Plug 'vim-scripts/xoria256.vim'
