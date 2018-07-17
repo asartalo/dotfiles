@@ -96,26 +96,27 @@ let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
 autocmd BufReadPost * :DetectIndent
 
 " Command T
-"!!!et g:ctrlp_custom_ignore = {
-"!!! \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
-"!!! \ 'file': '\.exe$\|\.so$\|\.dat$'
-"!!! \ }
-"!!!
-"!!!et wildignore+=node_modules
-"!!!et wildignore+=.git
-"!!!et wildignore+=dist
-"!!!et wildignore+=client/dist
-"!!!et wildignore+=*/bower_components
-"!!!et wildignore+=client/bower_components
-"!!!et wildignore+=*/jspm_packages
-"!!!et wildignore+=tmp,/.tmp
-"!!!et wildignore+=*/.png
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.sass-cache$|\.hg$\|\.svn$\|\.yardoc\|log\|tmp$|\v[\/]bower_components',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
+set wildignore+=node_modules
+set wildignore+=.git
+set wildignore+=dist
+set wildignore+=client/dist
+set wildignore+=*/bower_components
+set wildignore+=client/bower_components
+set wildignore+=*/jspm_packages
+set wildignore+=tmp,/.tmp
+set wildignore+=*/.png
+
 
 " CtrlP
-"!!!set runtimepath^=~/.vim/bundle/ctrlp.vim
+set runtimepath^=~/.config/nvim/plugged/ctrlp.vim
 
 " Ag
-"!!!set runtimepath^=~/.vim/bundle/ag
+set runtimepath^=~/.config/nvim/plugged/ag.vim
 
 " The Silver Searcher
 if executable('ag')
