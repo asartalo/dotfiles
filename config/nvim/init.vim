@@ -1,5 +1,8 @@
+" Start Plug first
 source $HOME/.config/nvim/config/vim-plug.vimrc
-source $HOME/.config/nvim/config/colors.vimrc
-source $HOME/.config/nvim/config/ctrlp.vimrc
-source $HOME/.config/nvim/config/lightline.vimrc
-source $HOME/.config/nvim/config/therest.vimrc
+
+" Load config files in config directory
+let config_files = split(globpath("$HOME/.config/nvim/config", '*'), "\n")
+for config_file in config_files
+	exec 'source' config_file
+endfor
