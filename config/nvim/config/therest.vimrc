@@ -7,7 +7,7 @@ set history=256
 " Automatically track changes to buffers
 set autoread
 
-set clipboard=unnamed  " Yanks go on clipboard instead.
+set clipboard=unnamedplus  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
 
 " Backup
