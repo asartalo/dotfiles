@@ -22,6 +22,7 @@ Plug 'mxw/vim-jsx'
 Plug 'ciaranm/detectindent'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Colors
 Plug 'vim-scripts/xoria256.vim'
