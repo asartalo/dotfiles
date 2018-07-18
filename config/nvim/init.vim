@@ -1,3 +1,6 @@
+" Disable vi compatibility
+set nocompatible
+
 " Start Plug first
 source $HOME/.config/nvim/config/vim-plug.vimrc
 

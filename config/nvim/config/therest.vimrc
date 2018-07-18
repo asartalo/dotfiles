@@ -1,6 +1,3 @@
-" Disable vi compatibility
-set nocompatible
-
 " Large history buffer
 set history=256
 
