@@ -1,4 +1,4 @@
-set background = "dark"
+set background="dark"
 
 colorscheme challenger_deep
 let g:lightline = { 'colorscheme': 'challenger_deep'}
