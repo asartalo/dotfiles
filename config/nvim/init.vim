@@ -2,7 +2,7 @@
 set nocompatible
 
 " Start Plug first
-source $HOME/.config/nvim/config/vim-plug.vimrc
+source $HOME/.config/nvim/vim-plug.vimrc
 
 " Load config files in config directory
 let config_files = split(globpath("$HOME/.config/nvim/config", '*'), "\n")
