@@ -1,0 +1,17 @@
+snippet rctor "React Component Constructor"
+constructor(props) {
+	super(props);
+	${1}
+}
+endsnippet
+
+snippet then "then(() => ...)" i
+then(${1:(${2:arg})} => ${3})
+endsnippet
+
+snippet thenn "then(() => {  })" i
+then(${1:(${2:arg})} => {
+	${3}
+})
+endsnippet
+
