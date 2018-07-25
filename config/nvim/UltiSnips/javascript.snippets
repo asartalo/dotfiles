@@ -15,3 +15,6 @@ then(${1:(${2:arg})} => {
 })
 endsnippet
 
+snippet bindt "this.something = this.something.bind(this)"
+this.${1:method} = this.$1.bind(this);
+endsnippet
