@@ -9,7 +9,7 @@ snippet then "then(() => ...)" i
 then(${1:(${2:arg})} => ${3})
 endsnippet
 
-snippet thenn "then(() => {  })" i
+snippet thenn "then(() => {	})" i
 then(${1:(${2:arg})} => {
 	${3}
 })
@@ -17,4 +17,63 @@ endsnippet
 
 snippet bindt "this.something = this.something.bind(this)"
 this.${1:method} = this.$1.bind(this);
+endsnippet
+
+snippet clog "console.log"
+console.log($1);
+endsnippet
+
+snippet rccmui "React Class Component - Material UI" b
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+	root: {
+	},
+});
+
+class ${1:`!v expand('%:t:r')`} extends Component {
+	static propTypes = {
+		classes: PropTypes.object.isRequired,
+		children: PropTypes.node,
+		className: PropTypes.string,
+	};
+
+	render() {
+		const { classes } = this.props;
+		return (
+			$2
+		);
+	}
+}
+
+export default withStyles(styles)($1);
+endsnippet
+
+snippet rtez "React Test with Enzyme" b
+import React from 'react';
+import { ${1:shallow} } from 'enzyme';
+
+import ${2:$3} from './$2';
+
+describe('${3:`!v expand('%:t:r:r')`}', () => {
+	let component, props;
+
+	function mount${4:$3}() {
+		return $1(<$3 {...props} />);
+	}
+
+	beforeEach(() => {
+		props = {
+			$5
+		};
+	});
+
+	it('renders without crashing', () => {
+		expect(${6:mount$4}()).toExist();
+	});
+
+	$7
+});
 endsnippet

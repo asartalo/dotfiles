@@ -30,12 +30,6 @@ set wildmode=longest,list " At command line, complete longest common string, the
 
 set backspace=indent,eol,start	" more powerful backspacing
 
-set tabstop=2     " Set the default tabstop
-set softtabstop=2
-set shiftwidth=2  " Set the default shift width for indents
-set expandtab    " Make tabs into spaces (set by tabstop)
-set smarttab      " Smarter tab levels
-
 set relativenumber " Show line numbers relative to current line
 set number         " Show current line number
 set colorcolumn=81
@@ -43,22 +37,8 @@ set synmaxcol=200
 
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
-"--------------------
-" Key remappings
-nnoremap vv <C-w>v
-nnoremap ss <C-w>s
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
 
-nnoremap gr :grep <cword> *<CR>
-nnoremap Gr :grep <cword> %:p:h/*<CR>
-nnoremap gR :grep '\b<cword>\b' *<CR>
-nnoremap GR :grep '\b<cword>\b' %:p:h/*<CR>
-" nnoremap <C-N><C-N> :set invnumber<CR>
-
-" Leader key
-let mapleader=","
+autocmd TermOpen * startinsert
 
 " Golang stuff
 " filetype off
@@ -88,9 +68,6 @@ autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " NERDTREE
 let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
-
-" detectindent
-autocmd BufReadPost * :DetectIndent
 
 " Command T
 let g:ctrlp_custom_ignore = {
@@ -133,10 +110,6 @@ xmap ga <Plug>(EasyAlign)
 "!!!endif
 
 
-" Buffer switching
-:nnoremap <Tab> :bnext<CR>
-:nnoremap <S-Tab> :bprevious<CR>
-
 " 80-column rule
 highlight ColorColumn ctermbg=056 guibg=#5f00d7
 
@@ -152,3 +125,4 @@ if has('macunix')
   "!!!let g:AutoPairsShortcutJump       = '∆' " <m-j>
   "!!!let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
 endif
+

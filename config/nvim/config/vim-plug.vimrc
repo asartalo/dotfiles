@@ -3,6 +3,7 @@
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'roryokane/detectindent'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rking/ag.vim'
@@ -19,7 +20,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'ciaranm/detectindent'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 
@@ -38,6 +38,7 @@ Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-cssomni'
 " Plug 'ncm2/ncm2-jedi' "for python
 
+" Snippets
 Plug 'ncm2/ncm2-ultisnips'
 Plug 'SirVer/ultisnips'
 Plug 'asartalo/vim-snippets'
