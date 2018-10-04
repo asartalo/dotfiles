@@ -56,5 +56,9 @@ Plug 'tlhr/anderson.vim'
 Plug 'sts10/vim-pink-moon'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
+" TypeScript
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
 " Initialize plugin system
 call plug#end()
