@@ -8,7 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'guns/vim-clojure-static'
 Plug 'kchmck/vim-coffee-script'
 Plug 'fatih/vim-go'
@@ -59,6 +59,13 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 " TypeScript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+" Focus mode
+Plug 'junegunn/goyo.vim'
+
+" Rubocop
+Plug 'ngmy/vim-rubocop'
+Plug 'Chiel92/vim-autoformat'
 
 " Initialize plugin system
 call plug#end()

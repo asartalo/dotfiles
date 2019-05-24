@@ -37,6 +37,8 @@ set synmaxcol=200
 
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
+" autocmd FileType ruby autocmd BufWritePre <buffer> :RuboCop -x -s
+" autocmd FileType ruby autocmd BufWritePost :RuboCop -x @%
 
 autocmd TermOpen * startinsert
 
@@ -44,7 +46,6 @@ autocmd TermOpen * startinsert
 " filetype off
 " filetype plugin indent off
 " set runtimepath+=$GOROOT/misc/vim
-" syntax on
 " autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " filetype on
 let g:go_fmt_command = "gofmt"
@@ -125,4 +126,7 @@ if has('macunix')
   "!!!let g:AutoPairsShortcutJump       = '∆' " <m-j>
   "!!!let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
 endif
+
+syntax on
+filetype on
 

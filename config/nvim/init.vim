@@ -7,6 +7,7 @@ set nocompatible
 " Start Plug first
 let config_files = [
 \'vim-plug',
+\'vim-autoformat',
 \'colors',
 \'ctrlp',
 \'folds',
@@ -15,6 +16,8 @@ let config_files = [
 \'lightline',
 \'ncm2',
 \'terminal',
+\'rubocop',
+\'syntastic',
 \'therest',
 \'utilsnips'
 \]

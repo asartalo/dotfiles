@@ -13,6 +13,7 @@ for file in $files; do
 done
 
 ln -s $dir/config/nvim ~/.config/nvim
+ln -s $dir/talon ~/.talon
 
 echo "Pulling git submodules"
 git submodule update --init --recursive

@@ -19,7 +19,7 @@ endif
 
 " inoremap <C-Cr> <c-c><Esc>o
 " inoremap <C-Cr> <C-O>o
-inoremap <C-o> <C-O>o
+" inoremap <C-o> <C-O>o
 
 " Buffer switching
 :nnoremap <Tab> :bnext<CR>
