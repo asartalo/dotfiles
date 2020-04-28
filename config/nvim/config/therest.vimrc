@@ -33,7 +33,7 @@ set backspace=indent,eol,start	" more powerful backspacing
 set relativenumber " Show line numbers relative to current line
 set number         " Show current line number
 set colorcolumn=81
-set synmaxcol=200
+set synmaxcol=500
 
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing spaces on save
@@ -66,9 +66,6 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4 softtabstop=4
 let g:syntastic_typescript_tsc_fname = ''
 
 autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab
-
-" NERDTREE
-let NERDTreeIgnore = ['node_modules', 'tmp', '.git']
 
 " Command T
 let g:ctrlp_custom_ignore = {

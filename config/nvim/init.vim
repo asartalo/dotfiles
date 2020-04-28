@@ -1,6 +1,13 @@
 " Disable vi compatibility
 set nocompatible
 
+" Figure out the system Python for Neovim.
+if exists("$VIRTUAL_ENV")
+    let g:python3_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), "\n", '', 'g')
+else
+    let g:python3_host_prog=substitute(system("which python3"), "\n", '', 'g')
+endif
+
 " NOTE TO SELF: A good way to debug config is to selectively remove things
 " from plugin directory
 
@@ -12,13 +19,17 @@ let config_files = [
 \'ctrlp',
 \'folds',
 \'indentation',
-\'keymaps',
 \'lightline',
 \'ncm2',
 \'terminal',
 \'rubocop',
 \'syntastic',
+\'php',
+\'nerdtree',
 \'therest',
+\'argwrap',
+\'keymaps',
+\'goyo',
 \'utilsnips'
 \]
 

@@ -22,6 +22,9 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'FooSoft/vim-argwrap'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
 Plug 'ncm2/ncm2'
 " ncm2 requires nvim-yarp
@@ -48,6 +51,8 @@ Plug 'joaohkfaria/vim-jest-snippets'
 Plug 'epilande/vim-es2015-snippets'
 " React code snippets
 Plug 'asartalo/vim-react-snippets'
+" Vue
+Plug 'posva/vim-vue'
 
 " Colors
 Plug 'vim-scripts/xoria256.vim'
@@ -60,12 +65,28 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
+" Context
+Plug 'Shougo/context_filetype.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'thinca/vim-quickrun'
+Plug 'osyo-manga/vim-precious'
+
+" Per-project vimrc
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/local_vimrc'
+
 " Focus mode
 Plug 'junegunn/goyo.vim'
 
 " Rubocop
 Plug 'ngmy/vim-rubocop'
 Plug 'Chiel92/vim-autoformat'
+
+" PHP
+Plug 'StanAngeloff/php.vim'
+
+" Svelte
+Plug 'burner/vim-svelte'
 
 " Initialize plugin system
 call plug#end()
