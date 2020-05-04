@@ -12,6 +12,7 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+[[ ! -a "$HOME/.config" ]] && mkdir "$HOME/.config" # Make .config directory if it does not exist
 ln -s $dir/config/nvim ~/.config/nvim
 ln -s $dir/talon ~/.talon
 
