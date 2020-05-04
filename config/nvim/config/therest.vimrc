@@ -7,6 +7,14 @@ set autoread
 set clipboard=unnamedplus  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
 
+" Clipboard
+if system('uname -r') =~ "Microsoft"
+  augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('clip.exe ',@")
+  augroup END
+endif
+
 " Backup
 set nobackup
 set noswapfile
