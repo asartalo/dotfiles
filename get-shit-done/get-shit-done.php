@@ -11,8 +11,7 @@ if ( 'root' != strtolower($whoami) ) {
 }
 
 // $homedir = trim(`cd ~ && pwd`);
-$homedir = trim(`echo /home/\$SUDO_USER`);
-print_r($homedir);
+$homedir = trim(`cat ./homedir.txt`);
 $iniLocal = $homedir.'/.config/get-shit-done.ini';
 $iniGlobal = __DIR__ . '/sites.ini';
 
