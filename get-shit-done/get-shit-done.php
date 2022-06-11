@@ -10,14 +10,17 @@ if ( 'root' != strtolower($whoami) ) {
   exitWithError("Please run script as root.");
 }
 
-$homedir = trim(`cd ~ && pwd`);
+// $homedir = trim(`cd ~ && pwd`);
+$homedir = trim(`echo /home/\$SUDO_USER`);
+print_r($homedir);
 $iniLocal = $homedir.'/.config/get-shit-done.ini';
 $iniGlobal = __DIR__ . '/sites.ini';
 
 $uname = trim(`uname`);
 
 if ( $uname == 'Linux' ) {
-    $restartNetworkingCommand = '/etc/init.d/networking restart';
+    # $restartNetworkingCommand = '/etc/init.d/networking restart';
+    $restartNetworkingCommand = 'netplan apply'; # Ubuntu 20.04
 } elseif ( $uname == 'Darwin' ) {
     $restartNetworkingCommand = 'dscacheutil -flushcache';
 } else {
