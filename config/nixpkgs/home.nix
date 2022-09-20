@@ -120,6 +120,8 @@
       };
       shellAliases = {
         vi = "nvim";
+        pbcopy = "xclip -selection clipboard";
+        pbpaste = "xclip -selection clipboard -o";
       };
     };
   };
