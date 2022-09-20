@@ -14,6 +14,8 @@ done
 
 [[ ! -a "$HOME/.config" ]] && mkdir "$HOME/.config" # Make .config directory if it does not exist
 ln -s $dir/config/nvim ~/.config/nvim
+ln -s $dir/config/nix ~/.config/nix
+ln -s $dir/config/nixpkgs ~/.config/nixpkgs
 ln -s $dir/talon ~/.talon
 
 echo "Pulling git submodules"
