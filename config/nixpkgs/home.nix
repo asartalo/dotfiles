@@ -44,7 +44,7 @@
       # nix-serve
       nodejs # node and npm
       nodePackages.eslint
-      nvim
+      neovim
       #prometheus # Monitoring system
       python310 # Have you upgraded yet???
       python310Packages.pip
@@ -66,7 +66,6 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    neovim.enable = true;
     # programs.erlang.enable = true;
     pandoc.enable = true;
 
