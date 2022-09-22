@@ -79,6 +79,10 @@
           export NIX_PATH="$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels''${NIX_PATH:+:$NIX_PATH}"
           # echo "non-nixos patches loaded with zsh"
         fi
+        export PATH="/usr/local/sbin:$PATH"
+        export PATH="$PATH:$HOME/.rvm/bin"
+        export PATH=$PATH:/usr/local/go/bin
+        export PATH=$PATH:$HOME/go/bin
       '';
       history = {
         size = 102400;
@@ -109,8 +113,6 @@
         theme = "robbyrussell";
       };
       profileExtra = ''
-        export PATH="/usr/local/sbin:$PATH"
-        export PATH="$PATH:$HOME/.rvm/bin"
       '';
       sessionVariables = {
         TERM="xterm-256color";
