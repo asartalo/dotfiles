@@ -8,15 +8,15 @@
   };
 
   outputs = inputs: {
-    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
-    defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
+    defaultPackage.x86_64-linux = inputs.home-manager.defaultPackage.x86_64-linux;
+    defaultPackage.x86_64-darwin = inputs.home-manager.defaultPackage.x86_64-darwin;
 
     homeConfigurations = {
       "wayne" = inputs.home-manager.lib.homeManagerConfiguration {
         system = "x86_64-linux"; # replace with x86_64-darwin on mac
         homeDirectory = "/home/wayne";
         username = "wayne";
-        configuration.imports = [ ./home.nix ];
+        configuration.imports = [ ./config/nixpkgs/home.nix ];
       };
     };
   };
