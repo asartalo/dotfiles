@@ -51,6 +51,7 @@
       python310Packages.pynvim
       sqlite # We want versions > 3.38.5
       thefuck # fix misstyped commands
+      tmux
       wget
       yarn # Node.js package manager
       zellij
@@ -73,6 +74,8 @@
       enable = true;
       enableAutosuggestions = true;
       enableCompletion = true;
+
+      # Extra commands that should be added to .zshenv
       envExtra = ''
         local nixos_version=`which nixos-version`
         if [[ ! -x "$nixos_version" ]]; then
@@ -91,6 +94,8 @@
         ignoreDups = true;
         expireDuplicatesFirst = true;
       };
+
+      # Extra commands that should be added to top of .zshrc
       initExtraFirst = ''
         mkdir -p $ZSH_CUSTOM # ensure custom
         if [ -d "$ZSH_CUSTOM/plugins/nix-shell" ]; then
@@ -108,6 +113,11 @@
           cd $HOME
         fi
       '';
+
+      # Extra commands that should be added to the end of .zshrc
+      # initExtra = ''
+      #  tmux source-file $HOME/.config/tmux/.tmux.conf
+      # '';
       oh-my-zsh = {
         enable = true;
         plugins = ["git" "vi-mode" "nix-shell" "nix-zsh-completions" "thefuck"];
