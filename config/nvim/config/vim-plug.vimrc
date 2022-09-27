@@ -71,8 +71,11 @@ Plug 'sts10/vim-pink-moon', NotVsCode()
 Plug 'challenger-deep-theme/vim', NotVsCode({ 'as': 'challenger-deep' })
 
 " TypeScript
-Plug 'HerringtonDarkholme/yats.vim', NotVsCode()
-Plug 'mhartington/nvim-typescript', NotVsCode({'do': './install.sh'})
+Plug 'pangloss/vim-javascript', NotVsCode()
+Plug 'leafgarland/typescript-vim', NotVsCode()
+Plug 'peitalin/vim-jsx-typescript', NotVsCode()
+" Plug 'HerringtonDarkholme/yats.vim', NotVsCode()
+" Plug 'mhartington/nvim-typescript', NotVsCode({'do': './install.sh'})
 
 " Context
 Plug 'Shougo/context_filetype.vim', NotVsCode()
