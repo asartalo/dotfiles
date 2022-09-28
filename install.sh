@@ -16,6 +16,7 @@ done
 ln -s $dir/config/nvim $HOME/.config/nvim
 ln -s $dir/config/nix $HOME/.config/nix
 ln -s $dir/config/tmux $HOME/.config/tmux
+ln -s $dir/config/zellij $HOME/.config/zellij
 # ln -s $dir/config/nixpkgs $HOME/.config/nixpkgs
 ln -s $dir/talon $HOME/.talon
 
