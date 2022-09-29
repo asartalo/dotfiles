@@ -44,6 +44,7 @@
       # nix-serve
       nodejs # node and npm
       nodePackages.eslint
+      nodePackages.node-gyp
       neovim
       #prometheus # Monitoring system
       python310 # Have you upgraded yet???

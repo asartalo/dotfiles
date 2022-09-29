@@ -5,20 +5,29 @@
 ############################
 
 dir=~/dotfiles # dotfiles directory
-files="vim"    # list of files/folders to symlink in homedir
+files="vim talon"    # list of files/folders to symlink in homedir
+configs="nvim nix tmux zellij"
 
 for file in $files; do
+  link="$HOME/.$file"
+  if [ -e $link ]; then
+    echo "$link exists. Skipping creating symlink."
+  else
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
+  fi
 done
 
 [[ ! -a "$HOME/.config" ]] && mkdir "$HOME/.config" # Make .config directory if it does not exist
-ln -s $dir/config/nvim $HOME/.config/nvim
-ln -s $dir/config/nix $HOME/.config/nix
-ln -s $dir/config/tmux $HOME/.config/tmux
-ln -s $dir/config/zellij $HOME/.config/zellij
-# ln -s $dir/config/nixpkgs $HOME/.config/nixpkgs
-ln -s $dir/talon $HOME/.talon
+for confdir in $configs; do
+  link="$HOME/.config/$confdir"
+  if [ -e $link ]; then
+    echo "$link exists. Skipping creating symlink."
+  else
+    echo "Creating symlink $link"
+    ln -s $dir/config/$confdir $link
+  fi
+done
 
 echo "Pulling git submodules"
 git submodule update --init --recursive
