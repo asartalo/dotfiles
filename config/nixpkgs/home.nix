@@ -115,9 +115,11 @@
       '';
 
       # Extra commands that should be added to the end of .zshrc
-      # initExtra = ''
-      #  tmux source-file $HOME/.config/tmux/.tmux.conf
-      # '';
+      initExtra = ''
+        if [ -e $HOME/.zshrc_home ]; then
+          source $HOME/.zshrc_home
+        fi
+      '';
       oh-my-zsh = {
         enable = true;
         plugins = ["git" "vi-mode" "nix-shell" "nix-zsh-completions" "thefuck"];
