@@ -41,8 +41,9 @@
       htop # Resource monitoring
       # kotlin
       lorri # Easy Nix shell
+      libuuid # Needed in some projects that use canvas
       # nix-serve
-      nodejs # node and npm
+      nodejs-16_x # node and npm
       nodePackages.eslint
       nodePackages.node-gyp
       neovim
