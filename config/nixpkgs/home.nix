@@ -51,6 +51,7 @@
       python310 # Have you upgraded yet???
       python310Packages.pip
       python310Packages.pynvim
+      rbenv # Ruby version manager
       sqlite # We want versions > 3.38.5
       thefuck # fix misstyped commands
       tmux
@@ -137,6 +138,7 @@
       };
       shellAliases = {
         vi = "nvim";
+        wtf = "fuck";
         get-shit-done = "sudo $HOME/dotfiles/get-shit-done/get-shit-done";
         pbcopy = "xclip -selection clipboard";
         pbpaste = "xclip -selection clipboard -o";
