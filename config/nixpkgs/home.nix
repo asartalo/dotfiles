@@ -121,6 +121,7 @@
         if [ -e $HOME/.zshrc_home ]; then
           source $HOME/.zshrc_home
         fi
+        eval "$(rbenv init -)"
       '';
       oh-my-zsh = {
         enable = true;
