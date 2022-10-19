@@ -24,6 +24,7 @@
 
     # Miscellaneous packages (in alphabetical order)
     packages = with pkgs; [
+      ag # the silver searcher
       bat # cat replacement written in Rust
       crystal # Like Ruby but faster and with types
       curl # An old classic
