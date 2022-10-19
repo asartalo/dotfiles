@@ -2,7 +2,6 @@
 
 {
   home = {
-    # Home Manager needs a bit of information about you and the
     # paths it should manage.
     username = "wayne";
     homeDirectory = "/home/wayne";
@@ -24,7 +23,6 @@
 
     # Miscellaneous packages (in alphabetical order)
     packages = with pkgs; [
-      ag # the silver searcher
       bat # cat replacement written in Rust
       crystal # Like Ruby but faster and with types
       curl # An old classic
@@ -53,6 +51,7 @@
       python310Packages.pip
       python310Packages.pynvim
       rbenv # Ruby version manager
+      silver-searcher # the silver searcher
       sqlite # We want versions > 3.38.5
       thefuck # fix misstyped commands
       tmux
