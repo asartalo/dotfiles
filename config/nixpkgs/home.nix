@@ -139,6 +139,7 @@
       shellAliases = {
         vi = "nvim";
         wtf = "fuck";
+        zel = "zellij";
         get-shit-done = "sudo $HOME/dotfiles/get-shit-done/get-shit-done";
         pbcopy = "xclip -selection clipboard";
         pbpaste = "xclip -selection clipboard -o";
