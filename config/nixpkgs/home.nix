@@ -33,6 +33,7 @@
       elixir # OTP with cool syntax
       erlang # OTP with weird syntax
       exa # ls replacement written in Rust
+      exercism
       # graphviz # dot
       go
       gnupg # gpg
