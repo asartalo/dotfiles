@@ -90,6 +90,7 @@
         export PATH="$PATH:$HOME/.rvm/bin"
         export PATH=$PATH:/usr/local/go/bin
         export PATH=$PATH:$HOME/go/bin
+        export PATH="$PATH":"$HOME/.pub-cache/bin"
         if [ -e /home/wayne/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wayne/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
       '';
       history = {
