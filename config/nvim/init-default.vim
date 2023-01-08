@@ -28,6 +28,7 @@ let config_files = [
 \'therest',
 \'argwrap',
 \'keymaps',
+\'coc',
 \'goyo',
 \]
 " Removed configs:

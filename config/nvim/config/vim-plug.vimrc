@@ -47,9 +47,15 @@ Plug 'mxw/vim-jsx', NotVsCode()
 " Plug 'ncm2/ncm2-cssomni'
 " Plug 'ncm2/ncm2-jedi' "for python
 
+" code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" To install ruby completions, run `:CocInstall coc-solargraph`
+" See https://github.com/neoclide/coc-solargraph
+
 " Snippets
 " Plug 'ncm2/ncm2-ultisnips'
-Plug 'SirVer/ultisnips', NotVsCode()
+" Plug 'SirVer/ultisnips', NotVsCode()
 Plug 'asartalo/vim-snippets', NotVsCode()
 " Jasmine language support
 Plug 'joaohkfaria/vim-jest-snippets', NotVsCode()
