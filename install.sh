@@ -6,7 +6,7 @@
 
 dir=~/dotfiles # dotfiles directory
 files="vim talon"    # list of files/folders to symlink in homedir
-configs="nvim nix tmux zellij"
+configs="nvim nix tmux zellij alacritty"
 
 for file in $files; do
   link="$HOME/.$file"

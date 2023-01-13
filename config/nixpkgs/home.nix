@@ -58,7 +58,6 @@
       tmux
       wget
       yarn # Node.js package manager
-      zellij
     ];
 
     # Creates ZSH_CUSTOM directory. See `sessionVariables`
@@ -73,6 +72,8 @@
 
     # programs.erlang.enable = true;
     pandoc.enable = true;
+
+    zellij.enable = true;
 
     zsh = {
       enable = true;
