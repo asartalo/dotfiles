@@ -19,7 +19,7 @@ endif
 set nobackup
 set noswapfile
 set nowb
-set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
+set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename
 
 " Display tabs and trailing spaces visually
 
