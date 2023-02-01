@@ -9,6 +9,10 @@ return function(use)
   local plugins = {
     'neotree',
     'surround',
+
+    -- Themes:
+    -- 'challenger_deep',
+    'catppuccin',
   }
 
   local loadPlugin = loader(use)

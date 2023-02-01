@@ -1,6 +1,5 @@
 -- Taken from:
 -- https://github.com/kylechui/nvim-surround
-print("custom/plugins/surround")
 
 return function(use)
   use({

@@ -2,10 +2,12 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
-        bind "Ctrl r" { SwitchToMode "resize"; }
+	unbind "Ctrl n"
+        bind "Ctrl r" { SwitchToMode "Resize"; }
     }
     resize {
         bind "Ctrl r" { SwitchToMode "Normal"; }
+	unbind "Ctrl n"
     }
 }
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP

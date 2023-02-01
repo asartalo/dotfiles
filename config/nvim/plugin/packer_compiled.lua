@@ -1,5 +1,4 @@
 -- Automatically generated packer.nvim plugin loader code
-print("From plugin/packer_compiled")
 
 if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
   vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
@@ -85,6 +84,12 @@ _G.packer_plugins = {
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  catppuccin = {
+    config = { "\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\ntheme\15catppuccin\18icons_enabled\1\25component_separators\6|\23section_separators\5\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0" },
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -125,10 +130,21 @@ _G.packer_plugins = {
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neo-tree.nvim"] = {
+    config = { "\27LJ\2\nì\1\0\0\6\0\a\0\0146\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1\18\1\0\0'\3\2\0'\4\5\0'\5\6\0B\1\4\1K\0\1\0\29:NeoTreeRevealToggle<CR>\n<C-m>\28:NeoTreeFocusToggle<CR>\n<C-n>\5\18custom.keymap\frequire\0" },
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
   ["neodev.nvim"] = {
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -139,6 +155,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-surround"] = {
+    config = { "\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0" },
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -151,6 +173,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
@@ -198,6 +225,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: neo-tree.nvim
+time([[Config for neo-tree.nvim]], true)
+try_loadstring("\27LJ\2\nì\1\0\0\6\0\a\0\0146\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1\18\1\0\0'\3\2\0'\4\5\0'\5\6\0B\1\4\1K\0\1\0\29:NeoTreeRevealToggle<CR>\n<C-m>\28:NeoTreeFocusToggle<CR>\n<C-n>\5\18custom.keymap\frequire\0", "config", "neo-tree.nvim")
+time([[Config for neo-tree.nvim]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\ntheme\15catppuccin\18icons_enabled\1\25component_separators\6|\23section_separators\5\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)
   require("packer.load")({"telescope-fzf-native.nvim"}, {}, _G.packer_plugins)
