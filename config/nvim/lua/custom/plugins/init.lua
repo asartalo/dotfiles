@@ -9,6 +9,7 @@ return function(use)
   local plugins = {
     'neotree',
     'surround',
+    'zen_mode',
 
     -- Themes:
     -- 'challenger_deep',
