@@ -1,4 +1,13 @@
-
+keybinds {
+    normal {
+        // uncomment this and adjust key if using copy_on_select=false
+        // bind "Alt c" { Copy; }
+        bind "Ctrl r" { SwitchToMode "resize"; }
+    }
+    resize {
+        bind "Ctrl r" { SwitchToMode "Normal"; }
+    }
+}
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 // eg. when terminal window with an active zellij session is closed
 // Options:
