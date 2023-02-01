@@ -46,7 +46,7 @@
       nodejs-16_x # node and npm
       nodePackages.eslint
       nodePackages.node-gyp
-      neovim
+      # neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
       python310 # Have you upgraded yet???
       python310Packages.pip
