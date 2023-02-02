@@ -2,11 +2,13 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
-	unbind "Ctrl n"
 
-	// Ctrl r is used as redo on vim/nvim
-	unbind "Ctrl r"
-        bind "Alt r" { SwitchToMode "Resize"; }
+        unbind "Ctrl q" 
+        bind "Alt q" { Quit; }
+    }
+    locked {
+        unbind "Ctrl g" 
+        bind "Alt g" { SwitchToMode "Normal"; }
     }
     resize {
 	// Ctrl r is used as redo on vim/nvim
@@ -14,6 +16,101 @@ keybinds {
         bind "Alt r" { SwitchToMode "Normal"; }
 
 	unbind "Ctrl n"
+    }
+    pane {
+	unbind "Ctrl p"
+        bind "Alt p" { SwitchToMode "Normal"; }
+    }
+    move {
+        unbind "Ctrl h"
+        bind "Alt m" { SwitchToMode "Normal"; }
+    }
+    tab {
+        unbind "Ctrl t"
+        bind "Alt t" { SwitchToMode "Normal"; }
+    }
+    session {
+        unbind "Ctrl o" 
+        bind "Alt o" { SwitchToMode "Normal"; }
+        bind "Alt s" { SwitchToMode "Scroll"; }
+    }
+    shared_except "locked" {
+        bind "Alt g" { SwitchToMode "Locked"; }
+        bind "Alt q" { Quit; }
+        bind "Alt n" { NewPane; }
+        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+        bind "Alt =" "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+
+	unbind "Ctrl n"
+
+	// Ctrl r is used as redo on vim/nvim
+	unbind "Ctrl r"
+        bind "Alt r" { SwitchToMode "Resize"; }
+
+        unbind "Ctrl g" 
+        bind "Alt g" { SwitchToMode "Locked"; }
+
+	unbind "Ctrl p"
+        bind "Alt p" { SwitchToMode "Pane"; }
+
+        unbind "Ctrl h"
+        bind "Alt m" { SwitchToMode "Move"; }
+
+        unbind "Ctrl t"
+        bind "Alt t" { SwitchToMode "Tab"; }
+        
+        unbind "Ctrl o" 
+        bind "Alt o" { SwitchToMode "Session"; }
+
+        unbind "Ctrl s"
+        bind "Alt s" { SwitchToMode "Search"; }
+    }
+    search {
+        bind "Alt s" { SwitchToMode "Normal"; }
+        bind "Alt c" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+    }
+    entersearch {
+        bind "Alt c" "Esc" { SwitchToMode "Scroll"; }
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+    shared_except "normal" "locked" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+    shared_except "pane" "locked" {
+        bind "Alt p" { SwitchToMode "Pane"; }
+    }
+    shared_except "resize" "locked" {
+        bind "Alt n" { SwitchToMode "Resize"; }
+    }
+    shared_except "scroll" "locked" {
+        bind "Alt s" { SwitchToMode "Scroll"; }
+    }
+    shared_except "session" "locked" {
+        bind "Alt o" { SwitchToMode "Session"; }
+    }
+    shared_except "tab" "locked" {
+        bind "Alt t" { SwitchToMode "Tab"; }
+    }
+    shared_except "move" "locked" {
+        bind "Alt h" { SwitchToMode "Move"; }
+    }
+    shared_except "tmux" "locked" {
+        bind "Alt b" { SwitchToMode "Tmux"; }
     }
 }
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
