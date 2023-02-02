@@ -10,7 +10,7 @@ return function(use)
     config = function()
       local map = require 'custom.keymap'
       map('', '<C-n>', ':NeoTreeFocusToggle<CR>')
-      map('', '<C-m>', ':NeoTreeRevealToggle<CR>')
+      map('', '<C-m>', ':NeoTreeReveal<CR>')
     end
   }
 end

@@ -1,4 +1,4 @@
-function loader(use)
+local function loader(use)
   return function(plugin)
     require('custom.plugins.' .. plugin) (use)
   end
