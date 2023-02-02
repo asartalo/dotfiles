@@ -12,6 +12,9 @@ return function(use)
     'zen_mode',
     'whitespace',
 
+    -- Syntax highlighting
+    'syntax_kdl',
+
     -- Themes:
     -- 'challenger_deep',
     'catppuccin',
