@@ -1,5 +1,5 @@
 .DS_Store
-config/nvim/plugged/**
-config/nvim_backup/plugged/**
+config/nvim/plugged/**/*
+config/nvim_backup/plugged/**/*
 vim/bundle
 get-shit-done/homedir.txt
