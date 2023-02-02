@@ -3,10 +3,16 @@ keybinds {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
 	unbind "Ctrl n"
-        bind "Ctrl r" { SwitchToMode "Resize"; }
+
+	// Ctrl r is used as redo on vim/nvim
+	unbind "Ctrl r"
+        bind "Alt r" { SwitchToMode "Resize"; }
     }
     resize {
-        bind "Ctrl r" { SwitchToMode "Normal"; }
+	// Ctrl r is used as redo on vim/nvim
+	unbind "Ctrl r"
+        bind "Alt r" { SwitchToMode "Normal"; }
+
 	unbind "Ctrl n"
     }
 }

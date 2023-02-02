@@ -10,6 +10,7 @@ return function(use)
     'neotree',
     'surround',
     'zen_mode',
+    'whitespace',
 
     -- Themes:
     -- 'challenger_deep',
