@@ -7,6 +7,7 @@ end
 return function(use)
   -- Specify plugins here
   local plugins = {
+    'argwrap',
     'neotree',
     'surround',
     'zen_mode',

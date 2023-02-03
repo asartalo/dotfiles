@@ -34,6 +34,7 @@
       erlang # OTP with weird syntax
       exa # ls replacement written in Rust
       exercism
+      fd
       # graphviz # dot
       go
       gnupg # gpg
@@ -52,6 +53,7 @@
       python310Packages.pip
       python310Packages.pynvim
       rbenv # Ruby version manager
+      ripgrep # Used in neovim telescope
       silver-searcher # the silver searcher
       sqlite # We want versions > 3.38.5
       thefuck # fix misstyped commands
