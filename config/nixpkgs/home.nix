@@ -41,17 +41,25 @@
       heroku
       htop # Resource monitoring
       # kotlin
-      lorri # Easy Nix shell
       libuuid # Needed in some projects that use canvas
+      lorri # Easy Nix shell
+      lua
+      lua52Packages.luarocks
       # nix-serve
       nodejs-16_x # node and npm
       nodePackages.eslint
       nodePackages.node-gyp
+      nodePackages.neovim
       # neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
-      python310 # Have you upgraded yet???
-      python310Packages.pip
-      python310Packages.pynvim
+
+
+      # Dealing with python + pip in nix is just disheartening
+      poetry
+      # python310 # Have you upgraded yet???
+      # python310Packages.pip
+      # python310Packages.pynvim
+
       rbenv # Ruby version manager
       ripgrep # Used in neovim telescope
       silver-searcher # the silver searcher
