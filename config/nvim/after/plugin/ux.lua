@@ -1,4 +1,5 @@
 local opt = vim.opt
+local map = require 'custom.keymap'
 
 -- Text wrapping
 opt.wrap = false -- don't wrap text
@@ -27,3 +28,10 @@ opt.hlsearch   = true -- highlight search
 opt.ignorecase = true -- Do case in sensitive matching with
 opt.smartcase  = true -- be sensitive when there's a capital letter
 opt.incsearch  = true
+
+-- Comment Mapping
+-- Not quite working. Investigate https://github.com/numToStr/Comment.nvim/issues/17
+map('n', '<C-_>', 'gcc')
+
+-- reload autopairs?
+-- require("nvim-autopairs").setup({})

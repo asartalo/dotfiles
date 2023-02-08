@@ -8,6 +8,7 @@ return function(use)
   -- Specify plugins here
   local plugins = {
     'argwrap',
+    'autopairs',
     'neotree',
     'surround',
     'zen_mode',
