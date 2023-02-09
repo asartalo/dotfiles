@@ -56,9 +56,10 @@
 
       # Dealing with python + pip in nix is just disheartening
       poetry
-      # python310 # Have you upgraded yet???
+      python310 # Have you upgraded yet???
       # python310Packages.pip
       # python310Packages.pynvim
+      python310Packages.git-filter-repo
 
       rbenv # Ruby version manager
       ripgrep # Used in neovim telescope
