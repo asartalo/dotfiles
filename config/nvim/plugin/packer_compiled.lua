@@ -85,7 +85,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   catppuccin = {
-    config = { "\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\18icons_enabled\1\25component_separators\6|\23section_separators\5\ntheme\15catppuccin\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0" },
+    config = { "\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\25component_separators\6|\23section_separators\5\ntheme\15catppuccin\18icons_enabled\1\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0" },
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
@@ -109,6 +109,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["guihua.lua"] = {
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/guihua.lua",
+    url = "https://github.com/ray-x/guihua.lua"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -135,6 +140,11 @@ _G.packer_plugins = {
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["navigator.lua"] = {
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/navigator.lua",
+    url = "https://github.com/ray-x/navigator.lua"
+  },
   ["neo-tree.nvim"] = {
     config = { "\27LJ\2\nç\1\0\0\6\0\a\0\0146\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1\18\1\0\0'\3\2\0'\4\5\0'\5\6\0B\1\4\1K\0\1\0\23:NeoTreeReveal<CR>\n<C-m>\28:NeoTreeFocusToggle<CR>\n<C-n>\5\18custom.keymap\frequire\0" },
     loaded = true,
@@ -150,6 +160,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\né\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\0\1\5\0\0\20TelescopePrompt\vguihua\16guihua_rust\15clap_input\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = true,
+    path = "/home/wayne/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -213,7 +229,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-argwrap"] = {
-    config = { "\27LJ\2\nb\0\0\6\0\5\0\t6\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1K\0\1\0\16ArgWrap<CR>\23<silent> <leader>a\6n\18custom.keymap\frequire\0" },
+    config = { "\27LJ\2\nb\0\0\6\0\5\0\t6\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1K\0\1\0\16ArgWrap<CR>\23<silent> <leader>]\6n\18custom.keymap\frequire\0" },
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/vim-argwrap",
     url = "https://github.com/FooSoft/vim-argwrap"
@@ -240,7 +256,7 @@ _G.packer_plugins = {
     url = "https://github.com/johnfrankmorgan/whitespace.nvim"
   },
   ["zen-mode.nvim"] = {
-    config = { "\27LJ\2\nW\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\1\nwidth\3Z\nsetup\rzen-mode\frequire\0" },
+    config = { "\27LJ\2\n≠\2\0\0\6\0\20\0\0316\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\6\0005\3\5\0=\3\a\0025\3\t\0005\4\b\0=\4\n\0035\4\v\0=\4\f\3=\3\r\2B\0\2\0016\0\2\0'\2\14\0B\0\2\2\18\1\0\0'\3\15\0'\4\16\0'\5\17\0B\1\4\1\18\1\0\0'\3\18\0'\4\19\0'\5\17\0B\1\4\1K\0\1\0\6z\6n\17:ZenMode<CR>\v<C-w>z\5\18custom.keymap\fplugins\14alacritty\1\0\2\fenabled\2\tfont\a16\rgitsigns\1\0\0\1\0\1\fenabled\1\vwindow\1\0\0\1\0\1\nwidth\3x\nsetup\rzen-mode\frequire\23Is it not working?\nprint\0" },
     loaded = true,
     path = "/home/wayne/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
@@ -248,29 +264,33 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-surround
-time([[Config for nvim-surround]], true)
-try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
-time([[Config for nvim-surround]], false)
--- Config for: vim-argwrap
-time([[Config for vim-argwrap]], true)
-try_loadstring("\27LJ\2\nb\0\0\6\0\5\0\t6\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1K\0\1\0\16ArgWrap<CR>\23<silent> <leader>a\6n\18custom.keymap\frequire\0", "config", "vim-argwrap")
-time([[Config for vim-argwrap]], false)
 -- Config for: whitespace.nvim
 time([[Config for whitespace.nvim]], true)
 try_loadstring("\27LJ\2\nî\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\2B\0\2\1K\0\1\0\22ignored_filetypes\1\4\0\0\20TelescopePrompt\fTrouble\thelp\1\0\1\14highlight\15DiffDelete\nsetup\20whitespace-nvim\frequire\0", "config", "whitespace.nvim")
 time([[Config for whitespace.nvim]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-try_loadstring("\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\18icons_enabled\1\25component_separators\6|\23section_separators\5\ntheme\15catppuccin\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0", "config", "catppuccin")
-time([[Config for catppuccin]], false)
 -- Config for: neo-tree.nvim
 time([[Config for neo-tree.nvim]], true)
 try_loadstring("\27LJ\2\nç\1\0\0\6\0\a\0\0146\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1\18\1\0\0'\3\2\0'\4\5\0'\5\6\0B\1\4\1K\0\1\0\23:NeoTreeReveal<CR>\n<C-m>\28:NeoTreeFocusToggle<CR>\n<C-n>\5\18custom.keymap\frequire\0", "config", "neo-tree.nvim")
 time([[Config for neo-tree.nvim]], false)
+-- Config for: vim-argwrap
+time([[Config for vim-argwrap]], true)
+try_loadstring("\27LJ\2\nb\0\0\6\0\5\0\t6\0\0\0'\2\1\0B\0\2\2\18\1\0\0'\3\2\0'\4\3\0'\5\4\0B\1\4\1K\0\1\0\16ArgWrap<CR>\23<silent> <leader>]\6n\18custom.keymap\frequire\0", "config", "vim-argwrap")
+time([[Config for vim-argwrap]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\nœ\1\0\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\a\0005\3\6\0=\3\b\2B\0\2\1K\0\1\0\foptions\1\0\0\1\0\4\25component_separators\6|\23section_separators\5\ntheme\15catppuccin\18icons_enabled\1\nsetup\flualine\frequire!colorscheme catppuccin-mocha\bcmd\bvim\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\né\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\21disable_filetype\1\0\0\1\5\0\0\20TelescopePrompt\vguihua\16guihua_rust\15clap_input\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-surround
+time([[Config for nvim-surround]], true)
+try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
+time([[Config for nvim-surround]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
-try_loadstring("\27LJ\2\nW\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\vwindow\1\0\0\1\0\1\nwidth\3Z\nsetup\rzen-mode\frequire\0", "config", "zen-mode.nvim")
+try_loadstring("\27LJ\2\n≠\2\0\0\6\0\20\0\0316\0\0\0'\2\1\0B\0\2\0016\0\2\0'\2\3\0B\0\2\0029\0\4\0005\2\6\0005\3\5\0=\3\a\0025\3\t\0005\4\b\0=\4\n\0035\4\v\0=\4\f\3=\3\r\2B\0\2\0016\0\2\0'\2\14\0B\0\2\2\18\1\0\0'\3\15\0'\4\16\0'\5\17\0B\1\4\1\18\1\0\0'\3\18\0'\4\19\0'\5\17\0B\1\4\1K\0\1\0\6z\6n\17:ZenMode<CR>\v<C-w>z\5\18custom.keymap\fplugins\14alacritty\1\0\2\fenabled\2\tfont\a16\rgitsigns\1\0\0\1\0\1\fenabled\1\vwindow\1\0\0\1\0\1\nwidth\3x\nsetup\rzen-mode\frequire\23Is it not working?\nprint\0", "config", "zen-mode.nvim")
 time([[Config for zen-mode.nvim]], false)
 -- Conditional loads
 time([[Conditional loading of telescope-fzf-native.nvim]], true)

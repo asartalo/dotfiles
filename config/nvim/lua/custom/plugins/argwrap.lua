@@ -5,7 +5,7 @@ return function(use)
       local map = require "custom.keymap"
       map(
         "n",
-        "<silent> <leader>a",
+        "<silent> <leader>]",
         "ArgWrap<CR>"
       )
     end

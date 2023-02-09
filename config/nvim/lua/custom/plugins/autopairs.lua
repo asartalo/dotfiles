@@ -2,10 +2,14 @@ return function (use)
   use {
     "windwp/nvim-autopairs",
     config = function ()
-      -- For some reason, this is not called.
-      -- See: https://github.com/windwp/nvim-autopairs/issues/284
-      print("nvim-autopairs config setup called")
-      -- require("nvim-autopairs").setup({})
+      require("nvim-autopairs").setup({
+        disable_filetype = {
+          "TelescopePrompt",
+          "guihua",
+          "guihua_rust",
+          "clap_input",
+        },
+      })
     end
   }
   NVIM_AUTOPAIRS_INSTALLED = true

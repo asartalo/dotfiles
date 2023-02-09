@@ -10,6 +10,7 @@ return function(use)
     'argwrap',
     'autopairs',
     'neotree',
+    'lsp_navigator',
     'surround',
     'zen_mode',
     'whitespace',
