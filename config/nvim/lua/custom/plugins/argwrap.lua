@@ -5,8 +5,8 @@ return function(use)
       local map = require "custom.keymap"
       map(
         "n",
-        "<silent> <leader>]",
-        "ArgWrap<CR>"
+        "<leader>[",
+        ":ArgWrap<CR>",
       )
     end
   }
