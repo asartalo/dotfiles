@@ -6,7 +6,7 @@ return function(use)
       map(
         "n",
         "<leader>[",
-        ":ArgWrap<CR>",
+        ":ArgWrap<CR>"
       )
     end
   }
