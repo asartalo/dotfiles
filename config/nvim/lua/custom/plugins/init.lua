@@ -9,6 +9,7 @@ return function(use)
   local plugins = {
     'argwrap',
     'autopairs',
+    'emmet',
     'neotree',
     'lsp_navigator',
     'surround',
