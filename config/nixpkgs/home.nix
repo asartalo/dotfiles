@@ -105,6 +105,7 @@
         export PATH=$PATH:$HOME/.cargo/bin
         export PATH=$PATH:$HOME/bin
         export PATH="$PATH":"$HOME/.pub-cache/bin"
+        export PATH=$PATH:$HOME/.npm-global/bin
         if [ -e /home/wayne/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wayne/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
       '';
       history = {
@@ -135,6 +136,10 @@
 
       # Extra commands that should be added to the end of .zshrc
       initExtra = ''
+        # move global npm packages
+        if [ -x "$(command -v npm)" ]; then
+          npm set prefix ~/.npm-global
+        fi
         if [ -e $HOME/.zshrc_home ]; then
           source $HOME/.zshrc_home
         fi
