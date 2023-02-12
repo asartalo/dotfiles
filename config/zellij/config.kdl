@@ -3,11 +3,11 @@ keybinds {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
 
-        unbind "Ctrl q" 
+        unbind "Ctrl q"
         bind "Alt q" { Quit; }
     }
     locked {
-        unbind "Ctrl g" 
+        unbind "Ctrl g"
         bind "Alt g" { SwitchToMode "Normal"; }
     }
     resize {
@@ -18,6 +18,9 @@ keybinds {
 	unbind "Ctrl n"
     }
     pane {
+        unbind "Ctrl q"
+        bind "Alt q" { Quit; }
+
 	unbind "Ctrl p"
         bind "Alt p" { SwitchToMode "Normal"; }
     }
@@ -30,7 +33,7 @@ keybinds {
         bind "Alt t" { SwitchToMode "Normal"; }
     }
     session {
-        unbind "Ctrl o" 
+        unbind "Ctrl o"
         bind "Alt o" { SwitchToMode "Normal"; }
         bind "Alt s" { SwitchToMode "Scroll"; }
     }
@@ -62,12 +65,15 @@ keybinds {
 
         unbind "Ctrl t"
         bind "Alt t" { SwitchToMode "Tab"; }
-        
+
         unbind "Ctrl o" 
         bind "Alt o" { SwitchToMode "Session"; }
 
         unbind "Ctrl s"
         bind "Alt s" { SwitchToMode "Search"; }
+
+        unbind "Ctrl q"
+        bind "Alt q" { Quit; }
     }
     search {
         bind "Alt s" { SwitchToMode "Normal"; }
