@@ -17,6 +17,7 @@ return function(use)
     'whitespace',
 
     -- Syntax highlighting
+    'markdown',
     'syntax_kdl',
 
     -- Themes:

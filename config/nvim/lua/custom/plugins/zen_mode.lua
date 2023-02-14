@@ -18,8 +18,8 @@ return function(use)
         },
       })
       local map = require 'custom.keymap'
-      map('', '<C-w>z', ':ZenMode<CR>')
-      map('n', 'z', ':ZenMode<CR>')
+      map('n', '<C-w>z', ':ZenMode<CR>')
+      -- map('n', 'z', ':ZenMode<CR>')
     end
   }
 end
