@@ -1,5 +1,5 @@
 -- Copy to clipboard
-vim.keymap.set('v', '<leader>y',  '"+y')
+vim.keymap.set('v', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+yg_')
 vim.keymap.set('n', '<leader>y', '"+y')
 
