@@ -13,6 +13,7 @@ return function(use)
     'neotree',
     'lsp_navigator',
     'surround',
+    'rust_tools',
     'zen_mode',
     'whitespace',
 
