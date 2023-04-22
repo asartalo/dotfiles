@@ -47,13 +47,14 @@
       lua
       lua52Packages.luarocks
       # nix-serve
-      nodejs-16_x # node and npm
-      nodePackages.eslint
-      nodePackages.node-gyp
-      nodePackages.neovim
+      # nodejs-16_x # node and npm
+      # nodePackages.eslint
+      # nodePackages.node-gyp
+      # nodePackages.neovim
       # neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
 
+      # pnpm # kind of like cached npm
 
       # Dealing with python + pip in nix is just disheartening
       poetry
@@ -69,7 +70,7 @@
       thefuck # fix misstyped commands
       tmux
       wget
-      yarn # Node.js package manager
+      # yarn # Node.js package manager
     ];
 
     # Creates ZSH_CUSTOM directory. See `sessionVariables`
