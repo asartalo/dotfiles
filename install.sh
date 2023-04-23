@@ -32,7 +32,7 @@ done
 if [[ $(./detect_os.sh) == "ubuntu" ]]; then
   # Install compilers
   sudo apt update
-  sudo apt install build-essential cmake
+  sudo apt install build-essential cmake pkg-config
 fi
 
 # Install rust and other tools
