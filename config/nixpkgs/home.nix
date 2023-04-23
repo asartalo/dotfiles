@@ -51,6 +51,7 @@
       # nodePackages.eslint
       # nodePackages.node-gyp
       # nodePackages.neovim
+      nodenv
       neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
 
@@ -146,6 +147,7 @@
           source $HOME/.zshrc_home
         fi
         eval "$(rbenv init -)"
+        eval "$(nodenv init -)"
 
         eval "$(starship init zsh)"
       '';
