@@ -51,7 +51,7 @@
       # nodePackages.eslint
       # nodePackages.node-gyp
       # nodePackages.neovim
-      # neovim # Neovim has problems with DYLD stuff
+      neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
 
       # pnpm # kind of like cached npm
