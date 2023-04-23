@@ -32,7 +32,7 @@ done
 if [[ $(./detect_os.sh) == "ubuntu" ]]; then
   # Install compilers
   sudo apt update
-  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev
+  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev
 fi
 
 # Install rust and other tools
