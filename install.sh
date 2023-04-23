@@ -32,7 +32,7 @@ done
 if [[ $(./detect_os.sh) == "ubuntu" ]]; then
   # Install compilers
   sudo apt update
-  sudo apt install build-essential cmake pkg-config
+  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
 fi
 
 # Install rust and other tools
@@ -64,5 +64,6 @@ git submodule update --init --recursive
 if [[ $(nix run . switch -- --flake .) ]]; then
   # Switch to zsh
   sudo chsh -s $(which zsh) $USER
-  echo "You should logout and login again in order to see your shiny new zsh shell"
+  echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
+  echo "Also, install alacritty terminal for more fun."
 fi
