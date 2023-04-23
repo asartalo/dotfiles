@@ -32,7 +32,7 @@ done
 if [[ $(./detect_os.sh) == "ubuntu" ]]; then
   # Install compilers
   sudo apt update
-  sudo apt install build-essential
+  sudo apt install build-essential cmake
 fi
 
 # Install rust and other tools
@@ -42,9 +42,27 @@ if ! [[ $(which rustup) ]]; then
 fi
 
 # Install starship prompt if it's not already
-if ! [[ $(which ) ]]; then
+if ! [[ $(which starship) ]]; then
   cargo install starship
 fi
 
+# Install nix
+if ! [[ $(which nix) ]]; then
+  if [[ $(grep Microsoft /proc/version) ]]; then
+    # wsl
+    sh <(curl -L https://nixos.org/nix/install) --no-daemon
+  else
+    sh <(curl -L https://nixos.org/nix/install) --daemon
+  fi
+fi
+
+# For better vim features
 echo "VIM: Pulling git submodules"
 git submodule update --init --recursive
+
+# Run nix
+if [[ $(nix run . switch -- --flake .) ]]; then
+  # Switch to zsh
+  sudo chsh -s $(which zsh) $USER
+  echo "You should logout and login again in order to see your shiny new zsh shell"
+fi

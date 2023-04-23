@@ -4,3 +4,4 @@ config/nvim/plugin/packer_compiled.lua
 config/nvim_backup/plugged/**/*
 vim/bundle
 get-shit-done/homedir.txt
+local-notes.md
