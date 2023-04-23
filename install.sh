@@ -29,5 +29,22 @@ for confdir in $configs; do
   fi
 done
 
-echo "Pulling git submodules"
+if [[ $(./detect_os.sh) == "ubuntu" ]]; then
+  # Install compilers
+  sudo apt update
+  sudo apt install build-essential
+fi
+
+# Install rust and other tools
+if ! [[ $(which rustup) ]]; then
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  export PATH=$PATH:$HOME/.cargo/bin
+fi
+
+# Install starship prompt if it's not already
+if ! [[ $(which ) ]]; then
+  cargo install starship
+fi
+
+echo "VIM: Pulling git submodules"
 git submodule update --init --recursive

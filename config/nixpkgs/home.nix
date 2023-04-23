@@ -146,6 +146,8 @@
           source $HOME/.zshrc_home
         fi
         eval "$(rbenv init -)"
+
+        eval "$(starship init zsh)"
       '';
       oh-my-zsh = {
         enable = true;
