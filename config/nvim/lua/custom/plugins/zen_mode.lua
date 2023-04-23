@@ -1,25 +1,23 @@
-return function(use)
-  use {
-    "folke/zen-mode.nvim",
-    config = function()
-      print("Is it not working?")
-      require("zen-mode").setup({
-        window = {
-          width = 120,
+return {
+  "folke/zen-mode.nvim",
+  config = function()
+    print("Is it not working?")
+    require("zen-mode").setup({
+      window = {
+        width = 120,
+      },
+      plugins = {
+        gitsigns = {
+          enabled = false,
         },
-        plugins = {
-          gitsigns = {
-            enabled = false,
-          },
-          alacritty = {
-            enabled = true,
-            font = "16",
-          },
+        alacritty = {
+          enabled = true,
+          font = "16",
         },
-      })
-      local map = require 'custom.keymap'
-      map('n', '<C-w>z', ':ZenMode<CR>')
-      -- map('n', 'z', ':ZenMode<CR>')
-    end
-  }
-end
+      },
+    })
+    local map = require 'custom.keymap'
+    map('n', '<C-w>z', ':ZenMode<CR>')
+    -- map('n', 'z', ':ZenMode<CR>')
+  end
+}

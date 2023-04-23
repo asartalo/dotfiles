@@ -1,5 +1,3 @@
-return function(use)
-  use { "imsnif/kdl.vim" }
-end
+return { "imsnif/kdl.vim" }
 
 

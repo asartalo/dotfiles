@@ -1,9 +1,7 @@
-return function (use)
-  use({
+return {
     'ray-x/navigator.lua',
-    requires = {
+    dependencies = {
       { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
       { 'neovim/nvim-lspconfig' },
     },
-  })
-end
+  }
