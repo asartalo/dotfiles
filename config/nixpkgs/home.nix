@@ -35,6 +35,7 @@
       exa # ls replacement written in Rust
       exercism
       fd
+      gcc
       gitui # git terminal "GUI"
       # graphviz # dot
       go
@@ -52,7 +53,7 @@
       # nodePackages.node-gyp
       # nodePackages.neovim
       nodenv
-      neovim # Neovim has problems with DYLD stuff
+      # neovim # Neovim has problems with DYLD stuff
       #prometheus # Monitoring system
 
       # pnpm # kind of like cached npm
@@ -72,6 +73,7 @@
       tmux
       wget
       # yarn # Node.js package manager
+      zig
     ];
 
     # Creates ZSH_CUSTOM directory. See `sessionVariables`
@@ -83,6 +85,17 @@
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
+
+    neovim = {
+      extraConfig = ''
+        lua <<EOF
+          local status, ts_install = pcall(require, "nvim-treesitter.install")
+          if(status) then
+            ts_install.compilers = { "${pkgs.gcc}/bin/gcc" }
+          end
+        EOF
+      '';
+    };
 
     # programs.erlang.enable = true;
     pandoc.enable = true;
