@@ -43,7 +43,7 @@ fi
 
 # Install starship prompt if it's not already
 if ! [[ $(which starship) ]]; then
-  cargo install starship
+  curl -sS https://starship.rs/install.sh | sh
 fi
 
 # Install nix

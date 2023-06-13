@@ -44,7 +44,7 @@
       htop # Resource monitoring
       # kotlin
       libuuid # Needed in some projects that use canvas
-      lorri # Easy Nix shell
+      # lorri # Easy Nix shell
       lua
       lua52Packages.luarocks
       # nix-serve
