@@ -35,7 +35,7 @@
       exa # ls replacement written in Rust
       exercism
       fd
-      gcc
+      # gcc
       gitui # git terminal "GUI"
       # graphviz # dot
       go
