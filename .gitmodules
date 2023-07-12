@@ -73,3 +73,4 @@
 [submodule "config/tmux/plugins/tpm"]
 	path = config/tmux/plugins/tpm
 	utl = https://github.com/tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm.git
