@@ -70,3 +70,6 @@
 [submodule "vim/bundle/necomplete.vim"]
 	path = vim/bundle/necomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "config/tmux/plugins/tpm"]
+	path = config/tmux/plugins/tpm
+	utl = https://github.com/tmux-plugins/tpm.git
