@@ -1,7 +1,6 @@
 return {
   "folke/zen-mode.nvim",
   config = function()
-    print("Is it not working?")
     require("zen-mode").setup({
       window = {
         width = 120,

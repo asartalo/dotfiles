@@ -32,7 +32,7 @@
       # docker-machine # Docker daemon for macOS
       elixir # OTP with cool syntax
       erlang # OTP with weird syntax
-      exa # ls replacement written in Rust
+      eza # ls replacement written in Rust
       exercism
       fd
       # gcc
@@ -160,7 +160,7 @@
           source $HOME/.zshrc_home
         fi
         eval "$(rbenv init -)"
-        eval "$(nodenv init -)"
+        eval "$(nodenv init - zsh)"
 
         eval "$(starship init zsh)"
       '';

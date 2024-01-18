@@ -1,0 +1,16 @@
+import = ["/home/wayne/.config/alacritty/challenger-deep.toml"]
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "Fira Code Nerd Font"
+
+[window]
+decorations = "full"
+dynamic_title = true
+startup_mode = "Maximized"
+
+[window.padding]
+x = 10
+y = 10
