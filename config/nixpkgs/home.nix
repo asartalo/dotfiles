@@ -43,6 +43,7 @@
       heroku
       htop # Resource monitoring
       # kotlin
+      julia
       libuuid # Needed in some projects that use canvas
       lorri # Easy Nix shell
       lua
@@ -61,8 +62,8 @@
       # Dealing with python + pip in nix is just disheartening
       poetry
       python310 # Have you upgraded yet???
-      # python310Packages.pip
-      # python310Packages.pynvim
+      python310Packages.pip
+      python310Packages.pynvim
       python310Packages.git-filter-repo
 
       rbenv # Ruby version manager

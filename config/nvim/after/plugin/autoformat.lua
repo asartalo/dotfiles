@@ -11,3 +11,5 @@ for _, filetype in ipairs(autoformat_files) do
   )
 end
 
+
+print("HELLO from autoformat.lua")
