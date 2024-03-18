@@ -1,3 +1,5 @@
+-- Based at 
+https://github.com/nvim-lua/kickstart.nvim/tree/b529bc33590cbb81a5916408b2d6001a643e596c
 --[[
 
 =====================================================================
