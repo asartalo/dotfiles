@@ -74,6 +74,7 @@
       tmux
       wget
       # yarn # Node.js package manager
+      yt-dlp
       zig
     ];
 
