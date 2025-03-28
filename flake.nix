@@ -2,22 +2,67 @@
   description = "My Home Manager flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, home-manager, ...}: {
-    defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
-    defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
+  outputs = {
+    catppuccin,
+    home-manager,
+    nixgl,
+    nixpkgs,
+    nixvim,
+    self,
+    ...
+  }@inputs:
+    let
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      hlib = home-manager.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [ nixgl.overlay ];
+    in {
+    nixosConfigurations = {
+      alpha = lib.nixosSystem {
+        # system = system;
+	inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
 
+	  catppuccin.nixosModules.catppuccin
+        ];
+      };
+    };
+
+    # Home Manager Standalone
     homeConfigurations = {
-      "wayne" = home-manager.lib.homeManagerConfiguration {
-        # system = "x86_64-linux"; # replace with x86_64-darwin on mac
-        # homeDirectory = "/home/wayne";
-        # username = "wayne";
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./config/nixpkgs/home.nix ];
+      wayne = hlib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          ./home.nix
+	  catppuccin.homeManagerModules.catppuccin
+	  nixvim.homeManagerModules.nixvim
+        ];
+        extraSpecialArgs = {
+          inherit nixgl;
+        };
       };
     };
   };
