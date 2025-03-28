@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script was taken from: https://gitlab.com/julianfairfax/scripts/-/blob/main/add-location-to-gnome-weather.sh
+
 if [[ ! -z "$(which gnome-weather)" ]]; then
 	system=1
 fi

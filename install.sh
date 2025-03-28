@@ -29,8 +29,12 @@ for confdir in $configs; do
   fi
 done
 
-if [[ $(./detect_os.sh) == "ubuntu" ]]; then
+echo "Detecting Operating System..."
+DETECTED_OS=$(./detect_os.sh)
+if [[ $DETECTED_OS == "ubuntu" ]] || [[ $DETECTED_OS == "ubuntu" ]]; then
   # Install compilers
+  echo "Detected: $DETECTED_OS"
+  echo "We are on an  system. Installing libs..."
   sudo apt update
   sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev
 fi
@@ -42,9 +46,10 @@ if ! [[ $(which rustup) ]]; then
 fi
 
 # Install starship prompt if it's not already
-if ! [[ $(which starship) ]]; then
-  cargo install starship
-fi
+# NOTE: This is already handled by nix
+# if ! [[ $(which starship) ]]; then
+#   cargo install starship
+# fi
 
 # Install nix
 if ! [[ $(which nix) ]]; then
@@ -61,7 +66,7 @@ echo "VIM: Pulling git submodules"
 git submodule update --init --recursive
 
 # Run nix
-if [[ $(nix run . switch -- --flake .) ]]; then
+if [[ $(home-manager switch -- --flake .) ]]; then
   # Switch to zsh
   sudo chsh -s $(which zsh) $USER
   echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
