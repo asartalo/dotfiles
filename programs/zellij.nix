@@ -18,7 +18,7 @@
   #   };
   # };
 
-  home.file = {
-    ".config/zellij/config.kdl".source = ../config/zellij/config.kdl;
-  };
+  # home.file = {
+  #   ".config/zellij/config.kdl".source = ../config/zellij/config.kdl;
+  # };
 }

@@ -104,7 +104,7 @@
         # character = {
         #   success_symbol = 'false';
         # };
-	package.disabled = true;
+	      package.disabled = true;
         aws.disabled = true;
         gcloud.disabled = true;
         line_break.disabled = true;

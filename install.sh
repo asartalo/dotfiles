@@ -31,7 +31,7 @@ done
 
 echo "Detecting Operating System..."
 DETECTED_OS=$(./detect_os.sh)
-if [[ $DETECTED_OS == "ubuntu" ]] || [[ $DETECTED_OS == "ubuntu" ]]; then
+if [[ $DETECTED_OS == "ubuntu" ]] || [[ $DETECTED_OS == "debian" ]]; then
   # Install compilers
   echo "Detected: $DETECTED_OS"
   echo "We are on an  system. Installing libs..."
@@ -59,6 +59,10 @@ if ! [[ $(which nix) ]]; then
   else
     sh <(curl -L https://nixos.org/nix/install) --daemon
   fi
+  # home-manager
+  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+  nix-channel --update
+  nix-shell '<home-manager>' -A install
 fi
 
 # For better vim features

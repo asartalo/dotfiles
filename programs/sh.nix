@@ -13,7 +13,9 @@
 
     # Extra commands that should be added to zshenv
     envExtra = ''
-      export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin
+export PATH=/nix/var/nix/profiles/default/bin:$PATH
+export PATH=$HOME/.nix-profile/bin:$PATH
     '';
 
     history = {
@@ -35,9 +37,15 @@
     '';
 
     profileExtra = ''
-      if [ -e /etc/profile ]; then
+# Nix
+if [ -e '/etc/profile.d/nix.sh' ]; then
+  . '/etc/profile.d/nix.sh'
+fi
+# End Nix
+
+if [ -e /etc/profile ]; then
 	emulate sh -c 'source /etc/profile'
-      fi
+fi
     '';
 
     oh-my-zsh = {

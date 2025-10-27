@@ -1,4 +1,3 @@
-import = ["/home/wayne/.config/alacritty/challenger-deep.toml"]
 
 [font]
 size = 12.0
@@ -14,3 +13,6 @@ startup_mode = "Maximized"
 [window.padding]
 x = 10
 y = 10
+
+[general]
+import = ["/home/wayne/.config/alacritty/challenger-deep.toml"]
