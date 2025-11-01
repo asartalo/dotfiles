@@ -36,7 +36,7 @@ if [[ $DETECTED_OS == "ubuntu" ]] || [[ $DETECTED_OS == "debian" ]]; then
   echo "Detected: $DETECTED_OS"
   echo "We are on an  system. Installing libs..."
   sudo apt update
-  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev
+  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev wl-clipboard
 fi
 
 # Install rust and other tools

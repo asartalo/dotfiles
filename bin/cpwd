@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Copied from: https://codeberg.org/EvanHahn/dotfiles/src/commit/843b9ee13d949d346a4a73ccee2a99351aed285b/home/bin/bin/cpwd
+
+set -e
+set -u
+set -o pipefail
+
+pwd | tr -d '\n' | copy

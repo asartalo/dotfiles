@@ -20,7 +20,7 @@ export PATH=$HOME/.nix-profile/bin:$PATH
 
     history = {
       size = 102400;
-      save = 102400;
+      save = 102400
       ignoreDups = true;
       expireDuplicatesFirst = true;
     };
@@ -31,9 +31,9 @@ export PATH=$HOME/.nix-profile/bin:$PATH
 
     # Extra commands that should be added to the end of .zshrc
     initExtra = ''
-      if [ -e $HOME/.zshrc_home ]; then
-	source $HOME/.zshrc_home
-      fi
+if [ -e $HOME/.zshrc_home ]; then
+  source $HOME/.zshrc_home
+fi
     '';
 
     profileExtra = ''
