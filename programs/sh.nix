@@ -16,11 +16,21 @@
 export PATH=$PATH:$HOME/bin
 export PATH=/nix/var/nix/profiles/default/bin:$PATH
 export PATH=$HOME/.nix-profile/bin:$PATH
+
+if [ -e $HOME/.nvm ]; then
+  export NVM_DIR=$HOME/.nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm
+fi
+
+if [ -e $HOME/.cargo/env ]; then
+  . $HOME/.cargo/env
+fi
     '';
 
     history = {
       size = 102400;
-      save = 102400
+      save = 102400;
       ignoreDups = true;
       expireDuplicatesFirst = true;
     };
