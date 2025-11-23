@@ -40,7 +40,7 @@ fi
     '';
 
     # Extra commands that should be added to the end of .zshrc
-    initExtra = ''
+    initContent = ''
 if [ -e $HOME/.zshrc_home ]; then
   source $HOME/.zshrc_home
 fi
@@ -84,9 +84,9 @@ fi
 
   home.packages = with pkgs; [
     # zsh plugins:
-    zsh-history
+    # zsh-history
     zsh-nix-shell
-    zsh-git-prompt
+    # zsh-git-prompt
     zsh-completions
     zsh-you-should-use
     zsh-vi-mode

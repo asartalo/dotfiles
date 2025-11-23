@@ -57,10 +57,10 @@
       neofetch # show-off OS
       nh # nix helper
       # nix-output-monitor # provides the command nom works just like nix w/ better logs
+      pay-respects # terminal command correction - alternative to thefuck
       ripgrep # recursively searches directories for a regex pattern
       silver-searcher
       skim
-      thefuck # fix misstyped commands
       tree
       wget
       which
@@ -86,9 +86,9 @@
     # basic configuration of git, please change to your own
     git = {
       enable = true;
-      userName = "Wayne Duran";
-      userEmail = "asartalo@gmail.com";
-      extraConfig = {
+      settings = {
+        user.name = "Wayne Duran";
+        user.email = "asartalo@gmail.com";
         init.defaultBranch = "main";
       };
     };

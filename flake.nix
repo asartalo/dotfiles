@@ -57,8 +57,8 @@
         inherit pkgs;
         modules = [
           ./home.nix
-	  catppuccin.homeManagerModules.catppuccin
-	  nixvim.homeManagerModules.nixvim
+	  catppuccin.homeModules.catppuccin
+	  nixvim.homeModules.nixvim
         ];
         extraSpecialArgs = {
           inherit nixgl;
