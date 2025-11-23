@@ -23,4 +23,5 @@
 --   on_attach = custom_attach
 -- }
 
-require('lspconfig').dartls.setup {}
+vim.lsp.config("dartls", {})
+vim.lsp.enable("dartls")
