@@ -1,3 +1,5 @@
+-- currently broken
+
 return {
   'dcampos/cmp-emmet-vim',
   dependencies = {
