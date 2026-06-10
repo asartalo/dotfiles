@@ -48,18 +48,19 @@
       curl
       devenv # reproducible development environments
       eza # ls replacement
+      fastfetch # replaces neofetch - show-off OS
       # exercism
       gnupg # gpg
       home-manager
       htop
       # lorri # Easy Nix shell
       lua
-      neofetch # show-off OS
+      # neofetch -- unmaintained # show-off OS
       nh # nix helper
       # nix-output-monitor # provides the command nom works just like nix w/ better logs
       pay-respects # terminal command correction - alternative to thefuck
       ripgrep # recursively searches directories for a regex pattern
-      silver-searcher
+      # silver-searcher # -- no longer maintained
       skim
       tree
       wget

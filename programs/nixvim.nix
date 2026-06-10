@@ -8,7 +8,7 @@
 
   # Use catpuccin theme https://github.com/catppuccin/nix
   catppuccin = {
-    enable = lib.mkDefault true;
+    autoEnable = lib.mkDefault true;
     flavour = lib.mkDefault "mocha";
   };
 
