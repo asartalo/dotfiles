@@ -12,6 +12,20 @@ If you need to update your nix config, run:
 nix run . switch -- --flake .
 ```
 
+## Home manager
+
+To update run:
+
+```sh
+home-manager switch --flake .
+```
+
+If you need to upgrade your flakes, run:
+
+```sh
+nix flake update
+```
+
 ## Upgrading Nix Packages
 
 Remove/rename the `flake.lock` file and run `nix run . switch -- --flake .`
