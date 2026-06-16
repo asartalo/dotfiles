@@ -133,9 +133,19 @@ workspace "notes" {
     open-on-output "HDMI-A-1"
 }
 
+
+// Task tracking view
+window-rule {
+    match app-id="diligence"
+    open-on-workspace "notes"
+    default-column-width { proportion 0.33333; }
+}
+
+// Startup view
 window-rule {
     match at-startup=true app-id="diligence"
-    open-on-workspace "notes"
+    open-on-workspace "main"
+    default-column-width { proportion 1.0; }
 }
 
 // Settings that influence how windows are positioned and sized.
@@ -308,7 +318,7 @@ spawn-at-startup "diligence"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -366,8 +376,33 @@ window-rule {
 }
 
 window-rule {
+    match app-id="Xsane" title=r#"^xsane "#
+    open-floating true
+    draw-border-with-background true
+}
+
+window-rule {
     match app-id=r#"gThumb$"#
     open-floating true
+}
+
+window-rule {
+    match app-id=r#"Characters$"#
+    open-floating true
+}
+
+// Basa development - E2E
+window-rule {
+    match app-id=r#"basa$"# title=r#"^E2E: "#
+    open-on-workspace "notes"
+    open-focused false
+}
+
+// Basa development
+window-rule {
+    match app-id=r#"basa$"# title=r#"^DEBUG: "#
+    open-on-workspace "notes"
+    open-focused false
 }
 
 // Example: block out two password managers from screen capture.
