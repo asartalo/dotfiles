@@ -41,6 +41,11 @@ fi
 
     # Extra commands that should be added to the end of .zshrc
     initContent = ''
+# Start zellij on start
+if [[ -z "$ZELLIJ" ]]; then
+  zellij attach -c main
+fi
+
 if [ -e $HOME/.zshrc_home ]; then
   source $HOME/.zshrc_home
 fi
