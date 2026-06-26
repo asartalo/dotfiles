@@ -1,1 +1,1 @@
-return { 'tpope/vim-rails' }
+vim.pack.add({ "https://github.com/tpope/vim-rails" })

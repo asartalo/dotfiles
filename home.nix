@@ -45,6 +45,7 @@
     # Packages that should be installed to the user profile.
     packages = with pkgs; [
       bat # cat replacement written in Rust
+      cargo-binstall # for installing cargo/rust binaries
       curl
       devenv # reproducible development environments
       eza # ls replacement

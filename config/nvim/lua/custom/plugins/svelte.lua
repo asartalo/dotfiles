@@ -1,1 +1,1 @@
-return {"leafOfTree/vim-svelte-plugin"}
+vim.pack.add({ "https://github.com/leafOfTree/vim-svelte-plugin" })

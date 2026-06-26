@@ -1,3 +1,1 @@
-return {
-  'nvim-telescope/telescope-live-grep-args.nvim'
-}
+vim.pack.add({ "https://github.com/nvim-telescope/telescope-live-grep-args.nvim" })

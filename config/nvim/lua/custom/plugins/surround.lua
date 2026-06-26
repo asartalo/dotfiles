@@ -1,13 +1,8 @@
--- Taken from:
--- https://github.com/kylechui/nvim-surround
+vim.pack.add({{
+  src = "https://github.com/kylechui/nvim-surround",
+  version = vim.version.range("4.x"), -- Use for stability;
+}})
 
-return {
-  "kylechui/nvim-surround",
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  event = "VeryLazy",
-  config = function()
-    require("nvim-surround").setup({
-      -- Configuration here, or leave empty to use defaults
-    })
-  end
-}
+require("nvim-surround").setup({
+  -- Configuration here, or leave empty to use defaults
+})

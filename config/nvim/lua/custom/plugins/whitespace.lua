@@ -1,20 +1,17 @@
--- Using packer.nvim
-return  {
-  'johnfrankmorgan/whitespace.nvim',
-  config = function ()
-    require('whitespace-nvim').setup({
-      -- configuration options and their defaults
+vim.pack.add({ "https://github.com/johnfrankmorgan/whitespace.nvim" })
 
-      -- `highlight` configures which highlight is used to display
-      -- trailing whitespace
-      highlight = 'DiffDelete',
+require('whitespace-nvim').setup({
+  -- configuration options and their defaults
 
-      -- `ignored_filetypes` configures which filetypes to ignore when
-      -- displaying trailing whitespace
-      ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help' },
-    })
+  -- `highlight` configures which highlight is used to display
+  -- trailing whitespace
+  highlight = 'DiffDelete',
 
-    -- remove trailing whitespace with a keybinding
-    -- vim.keymap.set('n', '<Leader>t', require('whitespace-nvim').trim)
-  end
-}
+  -- `ignored_filetypes` configures which filetypes to ignore when
+  -- displaying trailing whitespace
+  ignored_filetypes = { 'TelescopePrompt', 'Trouble', 'help' },
+
+  -- remove trailing whitespace with a keybinding
+  -- vim.keymap.set('n', '<Leader>t', require('whitespace-nvim').trim)
+})
+

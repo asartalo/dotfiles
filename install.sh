@@ -66,8 +66,9 @@ if ! [[ $(which nix) ]]; then
 fi
 
 # For better vim features
-echo "VIM: Pulling git submodules"
-git submodule update --init --recursive
+# echo "VIM: Pulling git submodules"
+# git submodule update --init --recursive
+
 
 # Run nix
 if [[ $(home-manager switch -- --flake .) ]]; then
@@ -76,3 +77,7 @@ if [[ $(home-manager switch -- --flake .) ]]; then
   echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
   echo "Also, install alacritty terminal for more fun."
 fi
+
+# Install treesitter-cli for neovim
+echo "Installing tree-sitter-cli"
+cargo binstall tree-sitter-cli

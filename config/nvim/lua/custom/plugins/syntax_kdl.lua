@@ -1,3 +1,1 @@
-return { "imsnif/kdl.vim" }
-
-
+vim.pack.add({ "https://github.com/imsnif/kdl.vim" })

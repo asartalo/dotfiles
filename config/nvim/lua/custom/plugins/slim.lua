@@ -1,1 +1,1 @@
-return { 'slim-template/vim-slim' }
+vim.pack.add({ "https://github.com/slim-template/vim-slim" })

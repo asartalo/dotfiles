@@ -9,3 +9,7 @@
 -- https://github.com/nvim-lua/kickstart.nvim
 
 require("kickstart")
+
+-- Plugins
+local loadPlugins = require("custom.plugins")
+loadPlugins()
