@@ -46,6 +46,8 @@ if [[ -z "$ZELLIJ" ]]; then
   zellij attach -c main
 fi
 
+eval "$(devenv hook zsh)"
+
 if [ -e $HOME/.zshrc_home ]; then
   source $HOME/.zshrc_home
 fi
