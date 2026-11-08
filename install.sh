@@ -49,9 +49,10 @@ fi
 
 # Install go
 /bin/bash ./go-install.sh
-content=cat << EOF
+content=cat<<EOF
 # eval "\$(zellij setup --generate-auto-start zsh)"
-export PATH=\$PATH:/usr/local/go/bin
+export GOROOT="\$HOME/.go"
+export PATH="\$PATH:\$GOROOT/bin"
 export PATH="\$PATH:\$(go env GOPATH)/bin"
 export PATH="\$PATH:\$HOME/flutter/bin"
 export PATH="\$PATH:\$HOME/.pub-cache/bin"
@@ -87,3 +88,7 @@ fi
 # Install treesitter-cli for neovim
 echo "Installing tree-sitter-cli"
 cargo binstall tree-sitter-cli
+
+# Install fnm
+echo "Installing fnm"
+cargo binstall fnm

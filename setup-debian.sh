@@ -10,11 +10,11 @@ echo "Add Debian Non-Free and Contrib Sources"
 if ! [ -e "/etc/apt/sources.list.d/contrib.sources" ]; then
   # Contrib
   content="Types: deb
-  URIs: http://ftp.us.debian.org/debian/
-  Suites: trixie
-  Components: main contrib
-  Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
-  "
+URIs: http://ftp.us.debian.org/debian/
+Suites: trixie
+Components: main contrib
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+"
   echo "$content" | sudo tee "/etc/apt/sources.list.d/contrib.sources" > /dev/null
 fi
 
@@ -22,7 +22,7 @@ sudo apt update
 
 echo "Install Codecs"
 sudo apt install \
-  fmpeg gstreamer1.0-libav # codecs
+  ffmpeg gstreamer1.0-libav # codecs
 
 echo "Use timesync instead of ntp"
 sudo apt purge ntp # purge ntp
@@ -52,6 +52,20 @@ sudo apt install gufw
 echo "Install Microsoft Fonts"
 sudo apt install ttf-mscorefonts-installer
 
+echo "Install VS Code"
+sudo snap install --classic code
+
+echo "Install Android Studio"
+sudo apt install qemu-system libvirt-daemon-system
+sudo apt install libtk-3-dev clang ninja-build
+sudo snap install android-studio --classic
+
+echo "Install Alacritty"
+sudo snap install alacritty --classic
+
+echo "Install Diligence"
+sudo snap install diligence
+
 echo "Install Flatpak Apps"
 flatpak install --user \
   com.google.Chrome \
@@ -66,20 +80,6 @@ flatpak install --user \
   org.tenacityaudio.Tenacity \
   org.videolan.VLC \
   org.gnome.gThumb
-
-echo "Install VS Code"
-sudo snap install --classic code
-
-echo "Install Android Studio"
-sudo apt install qemu-system libvirt-daemon-system
-sudo apt install libtk-3-dev clang ninja-build
-sudo snap install android-studio --classic
-
-echo "Install Alacritty"
-sudo snap install alacritty --classic
-
-echo "Install Diligence"
-sudo snap install diligence
 
 echo "Next Steps:"
 echo "- Install Printer drivers: https://support.brother.com/g/b/downloadlist.aspx?c=us_ot&lang=en&prod=dcpt310_all&os=128"
