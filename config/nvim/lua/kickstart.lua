@@ -216,6 +216,7 @@ do
   }
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+  vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'View diagnostic float box' })
 
   -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
   -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -702,7 +703,16 @@ do
   ---@type table<string, vim.lsp.Config>
   local servers = {
     -- clangd = {},
-    -- gopls = {},
+    gopls = {},
+    golangci_lint_ls = {
+      cmd = {'golangci-lint-langserver'},
+      root_markers = { '.git', 'go.mod' },
+      init_options = {
+        command = {
+          'golangci-lint', 'run', '--output.json.path', 'stdout', '--show-stats=false', '--issues-exit-code=1',
+        },
+      },
+    },
     -- pyright = {},
     -- rust_analyzer = {},
     --
@@ -710,7 +720,7 @@ do
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
-    -- ts_ls = {},
+    ts_ls = {},
 
     stylua = {}, -- Used to format Lua code
 

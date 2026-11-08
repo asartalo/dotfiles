@@ -4,8 +4,6 @@ vim.pack.add({
 	{ src = "https://github.com/ray-x/navigator.lua" },
 })
 
-
-
 vim.api.nvim_create_autocmd("User", {
 	pattern = "PackChanged",
 	callback = function(ev)
