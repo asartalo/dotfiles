@@ -12,7 +12,7 @@ fi
 
 DETECTED_OS=$(./detect_os.sh)
 # Run nix home-manager
-if [[ $(home-manager switch -- --flake .) ]]; then
+if [[ $(home-manager switch --flake .) ]]; then
   ZSH_PATH=$(which zsh)
   # Switch to zsh
   if [[ $DETECTED_OS == "debian" ]]; then
@@ -23,6 +23,7 @@ if [[ $(home-manager switch -- --flake .) ]]; then
     fi
   fi
   sudo chsh -s "$ZSH_PATH" $USER
-  echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
+  echo "DONE."
+  echo "You should logout and login again in order to see your shiny new zsh shell."
   echo "Also, install alacritty terminal for more fun."
 fi

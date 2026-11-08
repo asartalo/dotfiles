@@ -82,6 +82,9 @@ sudo apt install qemu-system libvirt-daemon-system
 sudo apt install libtk-3-dev clang ninja-build
 sudo snap install android-studio --classic
 
+echo "Install Alacritty"
+sudo snap install alacritty --classic
+
 echo "Install Diligence"
 sudo snap install diligence
 
