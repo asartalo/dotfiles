@@ -1,6 +1,5 @@
 #!/bin/bash
 ############################
-# .make.sh
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 ############################
 
@@ -62,31 +61,12 @@ if ! [[ $(which nix) ]]; then
   else
     sh <(curl -L https://nixos.org/nix/install) --daemon
   fi
-  # home-manager
-  nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-  nix-channel --update
-  nix-shell '<home-manager>' -A install
 fi
 
-# For better vim features
-# echo "VIM: Pulling git submodules"
-# git submodule update --init --recursive
-
-
-# Run nix home-manager
-if [[ $(home-manager switch -- --flake .) ]]; then
-  ZSH_PATH=$(which zsh)
-  # Switch to zsh
-  if [[ $DETECTED_OS == "debian" ]]; then
-    ETCSHELLS="/etc/shells"
-    if ! sudo grep -qxF "$ZSH_PATH" "$ETCSHELLS"; then # check if it's not appended already
-      echo "$ZSH_PATH" | sudo tee -a "$ETCSHELLS" > /dev/null
-      echo "Added zsh path to $ETCSHELLS"
-    fi
-  fi
-  sudo chsh -s "$ZSH_PATH" $USER
-  echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
-  echo "Also, install alacritty terminal for more fun."
+if [[ $(which nix-channel) ]]; then
+  source ./nix-continue.sh
+else
+  echo "Start a new terminal session to use nix and run ./nix-continue.sh"
 fi
 
 # Install treesitter-cli for neovim
