@@ -49,7 +49,7 @@ fi
 
 # Install go
 /bin/bash ./go-install.sh
-content=cat<<EOF
+content=$(cat<<EOF
 # eval "\$(zellij setup --generate-auto-start zsh)"
 export GOROOT="\$HOME/.go"
 export PATH="\$PATH:\$GOROOT/bin"
@@ -58,10 +58,13 @@ export PATH="\$PATH:\$HOME/flutter/bin"
 export PATH="\$PATH:\$HOME/.pub-cache/bin"
 
 # Fast Node Manager https://github.com/Schniz/fnm
-eval "\$(fnm env --shell zsh)"
-eval "\$(fnm env --use-on-cd --shell zsh)"
+if ! [[ \$(which fnm) ]]; then
+  eval "\$(fnm env --shell zsh)"
+  eval "\$(fnm env --use-on-cd --shell zsh)"
+fi
 EOF
-echo "$content" | sudo tee "$HOME/.zshrc_home" > /dev/null
+)
+echo "$content" | tee "$HOME/.zshrc_home" > /dev/null
 
 # Install starship prompt if it's not already
 # NOTE: This is already handled by nix

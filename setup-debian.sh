@@ -21,50 +21,50 @@ fi
 sudo apt update
 
 echo "Install Codecs"
-sudo apt install \
+sudo apt install -y \
   ffmpeg gstreamer1.0-libav # codecs
 
 echo "Use timesync instead of ntp"
 sudo apt purge ntp # purge ntp
-sudo apt install systemd-timesyncd # install
+sudo apt install -y systemd-timesyncd # install
 sudo systemctl start systemd-timesyncd # start
 timedatectl # check status
 
 echo "Install Flatpak"
-sudo apt install flatpak gnome-software-plugin-flatpak
+sudo apt install -y flatpak gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 echo "Install Flatseal"
-sudo apt install flatseal
+sudo apt install -y flatseal
 
 echo "Install Snap"
-sudo apt install snapd && sudo snap install core
-sudo apt install gnome-software-plugin-snap
+sudo apt install -y snapd && sudo snap install core
+sudo apt install -y gnome-software-plugin-snap
 
 echo "Enable unattended upgrades"
-sudo apt install unattended-upgrades
+sudo apt install -y unattended-upgrades
 sudo dpkg-reconfigure unattended-upgrades
 
 echo "Install Firewall"
-sudo apt install gufw
+sudo apt install -y gufw
 
 echo "Install Microsoft Fonts"
-sudo apt install ttf-mscorefonts-installer
+sudo apt install -y ttf-mscorefonts-installer
 
 echo "Install VS Code"
 sudo snap install --classic code
-
-echo "Install Android Studio"
-sudo apt install qemu-system libvirt-daemon-system
-sudo apt install libtk-3-dev clang ninja-build
-sudo snap install android-studio --classic
 
 echo "Install Alacritty"
 sudo snap install alacritty --classic
 
 echo "Install Diligence"
-sudo snap install diligence
+sudo snap install --edge diligence
+
+echo "Install Android Studio"
+sudo apt install -y qemu-system libvirt-daemon-system
+sudo apt install -y libgtk-3-dev clang ninja-build
+sudo snap install android-studio --classic
 
 echo "Install Flatpak Apps"
 flatpak install --user \
