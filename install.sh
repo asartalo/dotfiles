@@ -47,6 +47,21 @@ if ! [[ $(which rustup) ]]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
 
+# Install go
+/bin/bash ./go-install.sh
+content=cat << EOF
+# eval "\$(zellij setup --generate-auto-start zsh)"
+export PATH=\$PATH:/usr/local/go/bin
+export PATH="\$PATH:\$(go env GOPATH)/bin"
+export PATH="\$PATH:\$HOME/flutter/bin"
+export PATH="\$PATH:\$HOME/.pub-cache/bin"
+
+# Fast Node Manager https://github.com/Schniz/fnm
+eval "\$(fnm env --shell zsh)"
+eval "\$(fnm env --use-on-cd --shell zsh)"
+EOF
+echo "$content" | sudo tee "$HOME/.zshrc_home" > /dev/null
+
 # Install starship prompt if it's not already
 # NOTE: This is already handled by nix
 # if ! [[ $(which starship) ]]; then
