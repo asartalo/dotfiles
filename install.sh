@@ -34,9 +34,12 @@ DETECTED_OS=$(./detect_os.sh)
 if [[ $DETECTED_OS == "ubuntu" ]] || [[ $DETECTED_OS == "debian" ]]; then
   # Install compilers
   echo "Detected: $DETECTED_OS"
-  echo "We are on an  system. Installing libs..."
+  echo "We are on a debian-based system. Installing libs..."
   sudo apt update
-  sudo apt install build-essential cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev wl-clipboard
+  sudo apt install \
+    build-essential cmake curl pkg-config libfreetype6-dev libfontconfig1-dev \
+    libxcb-xfixes0-dev libxkbcommon-dev python3 libyaml-dev libpq-dev \
+    wl-clipboard
 fi
 
 # Install rust and other tools
@@ -70,10 +73,18 @@ fi
 # git submodule update --init --recursive
 
 
-# Run nix
+# Run nix home-manager
 if [[ $(home-manager switch -- --flake .) ]]; then
+  ZSH_PATH=$(which zsh)
   # Switch to zsh
-  sudo chsh -s $(which zsh) $USER
+  if [[ $DETECTED_OS == "debian" ]]; then
+    ETCSHELLS="/etc/shells"
+    if ! sudo grep -qxF "$ZSH_PATH" "$ETCSHELLS"; then # check if it's not appended already
+      echo "$ZSH_PATH" | sudo tee -a "$ETCSHELLS" > /dev/null
+      echo "Added zsh path to $ETCSHELLS"
+    fi
+  fi
+  sudo chsh -s "$ZSH_PATH" $USER
   echo "\nDONE.\nYou should logout and login again in order to see your shiny new zsh shell."
   echo "Also, install alacritty terminal for more fun."
 fi
