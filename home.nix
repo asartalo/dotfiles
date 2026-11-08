@@ -15,8 +15,7 @@
 
   # Use catpuccin theme https://github.com/catppuccin/nix
   catppuccin = {
-    enable = true;
-    # flavour = "mocha";
+    autoEnable = true;
     flavor = "mocha";
 
     starship.enable = true;
@@ -56,14 +55,14 @@
       htop
       # lorri # Easy Nix shell
       lua
-      # neofetch -- unmaintained # show-off OS
       nh # nix helper
       # nix-output-monitor # provides the command nom works just like nix w/ better logs
       pay-respects # terminal command correction - alternative to thefuck
       ripgrep # recursively searches directories for a regex pattern
       # silver-searcher # -- no longer maintained
-      skim
+      skim # command-line fuzzy finder written in Rust
       tree
+      watchexec # directory and file watcher then run scripts
       wget
       which
       yt-dlp
