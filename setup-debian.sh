@@ -7,23 +7,16 @@ set -e
 
 echo "Add Debian Non-Free and Contrib Sources"
 
-# Non-Free
-content="Types: deb
-URIs: http://ftp.us.debian.org/debian/
-Suites: trixie
-Components: main non-free
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
-"
-echo "$content" | sudo tee "/etc/apt/sources.list.d/non-free.sources" > /dev/null
-
-# Contrib
-content="Types: deb
-URIs: http://ftp.us.debian.org/debian/
-Suites: trixie
-Components: main contrib
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
-"
-echo "$content" | sudo tee "/etc/apt/sources.list.d/contrib.sources" > /dev/null
+if ! [ -e "/etc/apt/sources.list.d/contrib.sources" ]; then
+  # Contrib
+  content="Types: deb
+  URIs: http://ftp.us.debian.org/debian/
+  Suites: trixie
+  Components: main contrib
+  Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+  "
+  echo "$content" | sudo tee "/etc/apt/sources.list.d/contrib.sources" > /dev/null
+fi
 
 sudo apt update
 
